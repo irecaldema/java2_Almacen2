@@ -42,7 +42,7 @@ public class Leche {
 		return cod_barras;
 	}		
 	
-	static public void mostrar() throws IOException {
+	static public void introducir() throws IOException {
 		//leche
 		//ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();

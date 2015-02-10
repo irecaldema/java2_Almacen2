@@ -1,3 +1,6 @@
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 public class Lechuga {
     //propiedades
     private String tipoLechuga, procedencia, color;
@@ -43,4 +46,44 @@ public class Lechuga {
 	public int getCod_barras() {
 		return cod_barras;
 	}	
+	static public void introducir() throws IOException {
+		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
+		System.out.println("\n	lechuga:");
+		/*
+		String tipoLechuga, procedencia, color;
+		Double eurosUnidad;
+		Distribuidor distribuidor;
+		*/
+		System.out.println("¿Cuantos variedades de leche?");
+		int lechugas=sc.nextInt();
+		for (int l=0; l<lechugas; l++)
+		{					
+			Lechuga lechu = new Lechuga();
+			cont=l+1;
+			System.out.println("\n	Lechuga "+cont+":");						
+			System.out.println("		tipo de lechuga:");
+			lechu.setTipoLechuga(sc.next());
+			System.out.println("		procedencia:");
+			lechu.setProcedencia(sc.next());
+			System.out.println("		color:");
+			lechu.setColor(sc.next());
+			System.out.println("		euro/unidad:");
+			lechu.setEurosUnidad(sc.nextDouble());	
+			System.out.println("	Introduce el nombre del distribuidor:");
+			//cadena = sc.next();
+			cadena = "FastFood";
+			System.out.println("	Introduce el codigo de barras:");
+			lechu.setCod_barras(sc.nextInt());
+			//recorremos el ArrayList de distribuidores para buscar el introducido
+			for(int j=0; j<al_distri.size(); j++) {
+				//si lo encontramos
+				if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
+					//le asignamos el valor del distribuidor al objeto leche
+					lechu.setDistribuidor(al_distri.get(j));
+				}
+			}
+			//añadimos la manzana al ArrayList
+			al_lechuga.add(lechu);
+		}
+	}
 }

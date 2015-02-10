@@ -15,8 +15,6 @@ public class Almacen {
 
 		//***leer distibuidores***
 		Distribuidor.lectura();
-	
-		//leer distribuidores
 
 		// *****lectura clientes*****
 		Cliente.lectura();
@@ -59,85 +57,15 @@ public class Almacen {
 					String cadena = "";
 					
 					//manzana
-					//ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
-					int cont = 0;
-					System.out.println("¿Cuantos variedades de manzana?");
-					int manzanas=sc.nextInt();
-					for (int m=0; m<manzanas; m++)	{
-						cont=m+1;
-						System.out.println("\n	manzana "+cont+":");
-						/*
-						String tipoManzana, procedencia, color, 
-						Double eurosKilo;
-						Distribuidor distribuidor;
-						*/
-						Manzana manza = new Manzana();
-						System.out.println("		tipo de manzana:");
-						manza.setTipoManzana(sc.next());
-						System.out.println("		procedencia:");
-						manza.setProcedencia(sc.next());
-						System.out.println("		color:");
-						manza.setColor(sc.next());
-						System.out.println("		euro/kilo:");
-						manza.setEurosKilo(sc.nextDouble());			
-						System.out.println("	Introduce el nombre del distribuidor:");
-						//cadena = sc.next();
-						cadena = "FastFood";
-						System.out.println("	Introduce el codigo de barras:");
-						manza.setCod_barras(sc.nextInt());
-						//recorremos el ArrayList de distribuidores para buscar el introducido
-						for(int j=0; j<al_distri.size(); j++){
-							//si lo encontramos
-							if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-								//le asignamos el valor del distribuidor al objeto leche
-								manza.setDistribuidor(al_distri.get(j));
-							}
-						}
-						//añadimos la manzana al ArrayList
-						al_manza.add(manza);			
-					}
-					
+					//AHORA ESTA EN SU CLASE
+					Manzana.introducir();
 					//lechuga
-					//ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
-					System.out.println("\n	lechuga:");
-					/*
-					String tipoLechuga, procedencia, color;
-					Double eurosUnidad;
-					Distribuidor distribuidor;
-					*/
-					System.out.println("¿Cuantos variedades de leche?");
-					int lechugas=sc.nextInt();
-					for (int l=0; l<lechugas; l++)
-					{					
-						Lechuga lechu = new Lechuga();
-						cont=l+1;
-						System.out.println("\n	Lechuga "+cont+":");						
-						System.out.println("		tipo de lechuga:");
-						lechu.setTipoLechuga(sc.next());
-						System.out.println("		procedencia:");
-						lechu.setProcedencia(sc.next());
-						System.out.println("		color:");
-						lechu.setColor(sc.next());
-						System.out.println("		euro/unidad:");
-						lechu.setEurosUnidad(sc.nextDouble());	
-						System.out.println("	Introduce el nombre del distribuidor:");
-						//cadena = sc.next();
-						cadena = "FastFood";
-						System.out.println("	Introduce el codigo de barras:");
-						lechu.setCod_barras(sc.nextInt());
-						//recorremos el ArrayList de distribuidores para buscar el introducido
-						for(int j=0; j<al_distri.size(); j++) {
-							//si lo encontramos
-							if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-								//le asignamos el valor del distribuidor al objeto leche
-								lechu.setDistribuidor(al_distri.get(j));
-							}
-						}
-						//añadimos la manzana al ArrayList
-						al_lechuga.add(lechu);
-					}
+					//AHORA ESTA EN SU CLASE
+					Lechuga.introducir();
 					//LECHE
 					//AHORA ESTA EN SU CLASE
+					Leche.introducir();
+					
 					//ArrayList <Leche> al_leche = new ArrayList <Leche>();
 					/*cont=0;
 					System.out.println("¿Cuantos variedades de leche?");
