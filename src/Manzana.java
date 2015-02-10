@@ -1,8 +1,6 @@
 public class Manzana {
     //propiedades
-    private String tipoManzana;
-    private String procedencia;
-    private String color;
+    private String tipoManzana, procedencia, color;
     private Double eurosKilo;
     private Distribuidor distribuidor;
 	private int cod_barras;

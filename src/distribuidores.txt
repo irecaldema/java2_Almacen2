@@ -1,5 +1,5 @@
-FastFood,P2821391F,calle123,Gorka,Ruben,987654321
-BurgerMaster,F9003448I,calle456,Ruben,Giovany,987654388
-LacteosMax,L20092599,calle678,Giovany,Iban,987688321
-ManzanasSA,B35968544,calle987,Iban,Egoitz,987884321
-VerdurasXXL,V2530112H,calle654,Eigoitz,Gorka,987688888
+FastFood,P2821391F,España,Gipuzkoa,Donostia,calle123,98654,Gorka,Ruben,987654321
+BurgerMaster,F9003448I,España,Gipuzkoa,Donostia,calle456,98654,Ruben,Giovany,987654388
+LacteosMax,L20092599,España,Gipuzkoa,Donostia,calle678,98654,Giovany,Iban,987688321
+ManzanasSA,B35968544,España,Gipuzkoa,Donostia,calle987,98654,Iban,Egoitz,987884321
+VerdurasXXL,V2530112H,España,Gipuzkoa,Donostia,calle654,98654,Eigoitz,Gorka,987688888

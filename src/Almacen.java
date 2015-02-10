@@ -32,12 +32,11 @@ public class Almacen {
 			distri.setNombre(campos[0]);
 			distri.setCIF(campos[1]);
 			//DIRECCION
-			dire.setDireccion(campos[2]);	 			
-			/*
-			odireccion.setCiudad(separado[2]);
-			odireccion.setCalle(separado[3]);
-			odireccion.setNumero(Integer.parseInt(separado[4]));
-			odireccion.setCodPostal(Integer.parseInt(separado[5]));
+			dire.setPais(campos[2]);
+			dire.setCiudad(campos[3]);
+			dire.setProvincia(campos[4]);
+			dire.setDireccion(campos[5]);
+			dire.setCodPostal(Integer.parseInt(campos[6]));
 			*/
 			//CONTACTO
 			conta.setNombre(campos[3]);
@@ -51,44 +50,17 @@ public class Almacen {
 		}//leer distribuidores
 
 		// *****lectura clientes*****
-		//lectura del archivo y añadir los datos a un arraylist
-		FileReader fr2 = new FileReader("clientes.txt");
-		BufferedReader br2 = new BufferedReader(fr2); 
-		String [] campos2 = null;
-		String s2;
-		ArrayList <Cliente> al_cliente = new ArrayList <Cliente> ();		
-		while((s2 = br2.readLine()) != null) { 
-			//creamos los objetos
-			Cliente cliente = new Cliente();
-			Direccion dire2 = new Direccion();
-			
-			campos2 = s2.split(",");
-					    
-			//introducimos los valores en los objetos para despues añadirlos al ArrayList
-	 		//Cliente
-	 		cliente.setNombre(campos2[0]);
-	 		cliente.setApellidos(campos2[1]);
-	 		cliente.setDNI(campos2[2]);
-	 		//DIRECCION
-	 		dire2.setDireccion(campos2[3]);
-	 		//Cliente
-	 		cliente.setNum_socio(Double.parseDouble(campos2[4]));
-	 		cliente.setDto(Double.parseDouble(campos2[5]));
-	 		//completamos los datos del cliente con los objetos
-			cliente.setDireccion(dire2);
-			//añadimos el objeto distribuidor al ArrayList
-			al_cliente.add(cliente);
-		}
+		// AQUI ESTABA LECTURA CLIENTES (AHORA EN LA CLASE CLIENTES)
 		// lectura de clienetes
-
-		System.out.println("\n	Introduce el numero correspondiente:");
-		System.out.println("		1: distribuidores");
-		System.out.println("		2: productos");
-		System.out.println("		3: clientes");
-		System.out.println("		4: cesta");	
-		System.out.println("		0: salir");			
-		seleccion = sc.nextInt();
-		while (seleccion!=0){		
+		do {
+			System.out.println("\n	Introduce el numero correspondiente:");
+			System.out.println("		1: distribuidores");
+			System.out.println("		2: productos");
+			System.out.println("		3: clientes");
+			System.out.println("		4: cesta");	
+			System.out.println("		0: salir");			
+			seleccion = sc.nextInt();
+		//while (seleccion!=0){		
 			switch (seleccion) 
 			{
 				case 1: {// ***lectura de distribuidores***	
@@ -99,6 +71,9 @@ public class Almacen {
 							System.out.println("nombre: " + al_distri.get(x).getNombre());
 							System.out.println("C.I.F.: " + al_distri.get(x).getCIF());
 							System.out.println("direccion: ");
+								System.out.println("	" + al_distri.get(x).getDireccion().getPais());
+								System.out.println("	" + al_distri.get(x).getDireccion().getProvincia());
+								System.out.println("	" + al_distri.get(x).getDireccion().getCiudad());
 								System.out.println("	" + al_distri.get(x).getDireccion().getDireccion());
 							System.out.println("persona de contacto: ");
 								System.out.println("	" + al_distri.get(x).getPersonaContacto().getNombre());
@@ -256,7 +231,10 @@ public class Almacen {
 							*/
 						System.out.println("DISTRIBUIDOR: "+(al_manza.get(i).getDistribuidor().getNombre()));
 						System.out.println("CIF:" + al_manza.get(i).getDistribuidor().getCIF());
-						System.out.println("DIRECCION:" + al_manza.get(i).getDistribuidor().getDireccion().getDireccion());
+						System.out.println("DIRECCION: " + al_manza.get(i).getDistribuidor().getDireccion().getPais());
+						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getProcedencia());
+						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getCiudad());
+						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getDireccion());
 						System.out.println("CONTACTO:" + al_manza.get(i).getDistribuidor().getPersonaContacto().getNombre() + " " + al_manza.get(i).getDistribuidor().getPersonaContacto().getApellido());
 						System.out.println("TELEFONO:" + al_manza.get(i).getDistribuidor().getPersonaContacto().getTelefono());
 						System.out.println("*********************************************************");
@@ -284,7 +262,10 @@ public class Almacen {
 							*/
 						System.out.println("DISTRIBUIDOR: "+(al_lechuga.get(i).getDistribuidor().getNombre()));
 						System.out.println("CIF:" + al_lechuga.get(i).getDistribuidor().getCIF());
-						System.out.println("DIRECCION:" + al_lechuga.get(i).getDistribuidor().getDireccion().getDireccion());
+						System.out.println("DIRECCION:" + al_lechuga.get(i).getDistribuidor().getDireccion().getPais());
+						System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getProvincia());
+						System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getCiudad());
+						System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getDireccion());
 						System.out.println("CONTACTO:" + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getNombre() + " " + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getApellido());
 						System.out.println("TELEFONO:" + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getTelefono());
 						System.out.println("*********************************************************");
@@ -540,7 +521,7 @@ public class Almacen {
 					System.out.println("\n	No has seleccionado una opcion valida:");
 				}//default
 			}//switch
-			
+			/*
 			System.out.println("\n	Introduce el numero correspondiente:");
 			System.out.println("		1: distribuidores");
 			System.out.println("		2: productos");
@@ -548,6 +529,7 @@ public class Almacen {
 			System.out.println("		4: cesta");	
 			System.out.println("		0: salir");			
 			seleccion = sc.nextInt();	
-		}//while
+			*/
+		}while (seleccion!=0); //while
 	}//ejecucion
 }//class	
