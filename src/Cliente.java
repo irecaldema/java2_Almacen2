@@ -46,14 +46,14 @@ public class Cliente {
 	public Double getDto() {
 		return dto;
 	}
-	static public void mostrar() throws IOException {
+	static public void lectura() throws IOException {
 		// *****lectura clientes*****
 		//lectura del archivo y añadir los datos a un arraylist
+		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
 		FileReader fr2 = new FileReader("clientes.txt");
 		BufferedReader br2 = new BufferedReader(fr2); 
 		String [] campos2 = null;
 		String s2;
-		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();		
 		while((s2 = br2.readLine()) != null) { 
 			//creamos los objetos
 			Cliente cliente = new Cliente();
@@ -68,9 +68,13 @@ public class Cliente {
 	 		cliente.setDNI(campos2[2]);
 	 		//DIRECCION
 	 		dire2.setDireccion(campos2[3]);
+	 		dire2.setDireccion(campos2[4]);
+	 		dire2.setDireccion(campos2[5]);
+	 		dire2.setDireccion(campos2[6]);
+	 		dire2.setDireccion(Integer.parseInt(campos2[7]));
 	 		//Cliente
-	 		cliente.setNum_socio(Double.parseDouble(campos2[4]));
-	 		cliente.setDto(Double.parseDouble(campos2[5]));
+	 		cliente.setNum_socio(Double.parseDouble(campos2[8]));
+	 		cliente.setDto(Double.parseDouble(campos2[9]));
 	 		//completamos los datos del cliente con los objetos
 			cliente.setDireccion(dire2);
 			//añadimos el objeto distribuidor al ArrayList

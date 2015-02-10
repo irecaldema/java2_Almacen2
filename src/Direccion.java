@@ -7,7 +7,7 @@ public class Direccion {
 	//métodos getter y setter
 	public void setPais(String dato){
 	    	this.pais = dato;
-    	}
+    }
     public void setProvincia(String dato){
     	this.provincia = dato;
     }
@@ -37,7 +37,4 @@ public class Direccion {
 	public int getCpostal(){
 		return this.cpostal;
     }
-
-
-	
 }
