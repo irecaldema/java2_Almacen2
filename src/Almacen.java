@@ -15,7 +15,7 @@ public class Almacen {
 
 		//***leer distibuidores***
 		Distribuidor.lectura();
-		
+	
 		//leer distribuidores
 
 		// *****lectura clientes*****
@@ -497,15 +497,6 @@ public class Almacen {
 					System.out.println("\n	No has seleccionado una opcion valida:");
 				}//default
 			}//switch
-			/*
-			System.out.println("\n	Introduce el numero correspondiente:");
-			System.out.println("		1: distribuidores");
-			System.out.println("		2: productos");
-			System.out.println("		3: clientes");
-			System.out.println("		4: cesta");	
-			System.out.println("		0: salir");			
-			seleccion = sc.nextInt();	
-			*/
-		}while (seleccion!=0); //while
+		}while (seleccion!=0); //do{}while();
 	}//ejecucion
 }//class	
