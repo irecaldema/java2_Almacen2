@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Leche {
     //propiedades
@@ -46,10 +45,9 @@ public class Leche {
 		Scanner sc = new Scanner(System.in);
 			System.out.println("\n	leche :");
 			Leche lec = new Leche();
-			//lec.setTipo(sc.next());
-			System.out.println("		tipo de leche:");
+			System.out.println("		Tipo de leche:");
 			lec.setTipo(sc.next());
-			System.out.println("		procedencia:");
+			System.out.println("		Procedencia:");
 			lec.setProcedencia(sc.next());
 			System.out.println("		euro/litro:");
 			lec.setEurosLitro(sc.nextDouble());
@@ -62,7 +60,6 @@ public class Leche {
 			Distribuidor distri = new Distribuidor();
 			lec.setDistribuidor(distri.busqueda_d(cadena));
 
-			//añadimos la leche al ArrayList
-			return.lec;	
-	}//class
+			return lec;	
+	}
 }

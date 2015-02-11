@@ -46,7 +46,7 @@ public class Cliente {
 	public Double getDto() {
 		return dto;
 	}
-	static public ArrayList lectura() throws IOException {
+	static public ArrayList <Cliente> lectura() throws IOException {
 		// *****lectura clientes*****
 		//lectura del archivo y añadir los datos a un arraylist
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();

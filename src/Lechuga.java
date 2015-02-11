@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Lechuga {
     //propiedades
@@ -46,17 +45,16 @@ public class Lechuga {
 	public int getCod_barras() {
 		return cod_barras;
 	}	
-	static public void introducir() throws IOException {
+	static public Lechuga introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
-		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
 		System.out.println("\n	lechuga:");
 			Lechuga lechu = new Lechuga();
 			System.out.println("\n	Lechuga:");						
-			System.out.println("		tipo de lechuga:");
+			System.out.println("		Tipo de lechuga:");
 			lechu.setTipoLechuga(sc.next());
-			System.out.println("		procedencia:");
+			System.out.println("		Procedencia:");
 			lechu.setProcedencia(sc.next());
-			System.out.println("		color:");
+			System.out.println("		Color:");
 			lechu.setColor(sc.next());
 			System.out.println("		euro/unidad:");
 			lechu.setEurosUnidad(sc.nextDouble());	
@@ -69,8 +67,6 @@ public class Lechuga {
 			Distribuidor distri = new Distribuidor();
 			lechu.setDistribuidor(distri.busqueda_d(cadena));
 			
-			//añadimos la manzana al ArrayList
-			al_lechuga.add(lechu);
-		//}
-	}//class
+			return lechu;
+	}
 }

@@ -7,7 +7,7 @@ public class Distribuidor {
     private String nombre, CIF;
     private Direccion direccion;
     private Contacto personaContacto;
-    static ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
+    static ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor>();
     //nombre,CIF,direccion,personaContacto
     
     //metodos getter y setter
@@ -37,7 +37,7 @@ public class Distribuidor {
 		return personaContacto;
 	}
 	
-	static public ArrayList lectura() throws IOException {
+	static public ArrayList <Distribuidor> lectura() throws IOException {
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		FileReader fr = new FileReader("distribuidores.txt");
 		BufferedReader br = new BufferedReader(fr); 
@@ -58,8 +58,8 @@ public class Distribuidor {
 			distri.setCIF(campos[1]);
 			//DIRECCION
 			dire.setPais(campos[2]);
-			dire.setCiudad(campos[3]);
-			dire.setProvincia(campos[4]);
+			dire.setProvincia(campos[3]);
+			dire.setCiudad(campos[4]);
 			dire.setDireccion(campos[5]);
 			dire.setCpostal(Integer.parseInt(campos[6]));
 			//CONTACTO

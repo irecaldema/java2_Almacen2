@@ -1,5 +1,4 @@
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Scanner;
 public class Manzana {
     //propiedades
@@ -50,14 +49,13 @@ public class Manzana {
 	public int getCod_barras() {
 		return cod_barras;
 	}	
-	static public void introducir() throws IOException {
+	static public Manzana introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
-		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 			System.out.println("\n	manzana:");
 			Manzana manza = new Manzana();
-			System.out.println("		tipo de manzana:");
+			System.out.println("		Tipo de manzana:");
 			manza.setTipoManzana(sc.next());
-			System.out.println("		procedencia:");
+			System.out.println("		Procedencia:");
 			manza.setProcedencia(sc.next());
 			System.out.println("		color:");
 			manza.setColor(sc.next());
@@ -72,8 +70,6 @@ public class Manzana {
 			Distribuidor distri = new Distribuidor();
 			manza.setDistribuidor(distri.busqueda_d(cadena));
 			
-			//añadimos la manzana al ArrayList
-			al_manza.add(manza);			
-		//}
-	}//class
+			return manza;		
+	}
 }

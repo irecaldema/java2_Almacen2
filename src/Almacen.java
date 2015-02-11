@@ -8,7 +8,6 @@ public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
-		int cantidad=0;
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
@@ -66,7 +65,6 @@ public class Almacen {
 						al_manza.add(Manzana.introducir());
 					}
 					//lechuga ********************
-					cantidad=0;
 					System.out.println("¿Cuantos variedades de leche?");
 					int cont_lechugas=sc.nextInt();
 					for(int i = 0;i<cont_lechugas;i++){
@@ -319,7 +317,7 @@ public class Almacen {
 		    	    			System.out.println("Producto:"+al_manza.get(i).getCod_barras()+" Codigo de barras: "+ al_manza.get(i).getCod_barras() +" precio: "+al_manza.get(i).getEurosKilo() );
 								System.out.println("Introduce la cantidad que quiere comprar");
 								double cantidad = sc.nextDouble();
-								precio=al_manza.get(i).getEurosKilo()*cantidad;
+								precio=al_manza.get(i).getEurosKilo();
 								break;
 							}
 						}//busqueda del producto en manzanas
