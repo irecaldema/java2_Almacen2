@@ -7,6 +7,7 @@ public class Distribuidor {
     private String nombre, CIF;
     private Direccion direccion;
     private Contacto personaContacto;
+    static ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
     //nombre,CIF,direccion,personaContacto
     
     //metodos getter y setter
@@ -34,9 +35,9 @@ public class Distribuidor {
 	}
 	public Contacto getPersonaContacto() {
 		return personaContacto;
-	}		
+	}
 	
-	static public void lectura() throws IOException {
+	static public ArrayList lectura() throws IOException {
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		FileReader fr = new FileReader("distribuidores.txt");
 		BufferedReader br = new BufferedReader(fr); 
@@ -60,7 +61,7 @@ public class Distribuidor {
 			dire.setCiudad(campos[3]);
 			dire.setProvincia(campos[4]);
 			dire.setDireccion(campos[5]);
-			dire.setCodPostal(Integer.parseInt(campos[6]));
+			dire.setCpostal(Integer.parseInt(campos[6]));
 			//CONTACTO
 			conta.setNombre(campos[3]);
 			conta.setApellido(campos[4]);
@@ -71,5 +72,19 @@ public class Distribuidor {
 			//añadimos el objeto distribuidor al ArrayList
 			al_distri.add(distri);
 		}
-	}	
+		return al_distri;
+	}
+	
+	public Distribuidor busqueda_d(String cadena) {
+		Distribuidor distribuidor_encontrado = new Distribuidor();
+		for(int j=0; j<al_distri.size(); j++) {
+			//si lo encontramos
+			if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
+				//le asignamos el valor del distribuidor al objeto leche
+				distribuidor_encontrado=al_distri.get(j);
+			}
+			break; //una vez encontrado salimos del bucle
+		}
+		return distribuidor_encontrado;
+	}
 }

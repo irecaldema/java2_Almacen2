@@ -46,7 +46,7 @@ public class Cliente {
 	public Double getDto() {
 		return dto;
 	}
-	static public void lectura() throws IOException {
+	static public ArrayList lectura() throws IOException {
 		// *****lectura clientes*****
 		//lectura del archivo y añadir los datos a un arraylist
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
@@ -67,11 +67,11 @@ public class Cliente {
 	 		cliente.setApellidos(campos2[1]);
 	 		cliente.setDNI(campos2[2]);
 	 		//DIRECCION
-	 		dire2.setDireccion(campos2[3]);
-	 		dire2.setDireccion(campos2[4]);
-	 		dire2.setDireccion(campos2[5]);
-	 		dire2.setDireccion(campos2[6]);
-	 		dire2.setDireccion(Integer.parseInt(campos2[7]));
+	 		dire2.setPais(campos2[3]);//pais
+	 		dire2.setProvincia(campos2[4]);//provincia
+	 		dire2.setCiudad(campos2[5]);//ciudad
+	 		dire2.setDireccion(campos2[6]);//direccion
+	 		dire2.setCpostal(Integer.parseInt(campos2[7]));//cpostal
 	 		//Cliente
 	 		cliente.setNum_socio(Double.parseDouble(campos2[8]));
 	 		cliente.setDto(Double.parseDouble(campos2[9]));
@@ -80,6 +80,6 @@ public class Cliente {
 			//añadimos el objeto distribuidor al ArrayList
 			al_cliente.add(cliente);
 		}
-	}
-	
+		return al_cliente;
+	}//class
 }

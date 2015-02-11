@@ -47,6 +47,7 @@ public class Lechuga {
 		return cod_barras;
 	}	
 	static public void introducir() throws IOException {
+		Scanner sc = new Scanner(System.in);
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
 		System.out.println("\n	lechuga:");
 		/*
@@ -60,7 +61,7 @@ public class Lechuga {
 		{					
 			Lechuga lechu = new Lechuga();
 			cont=l+1;
-			System.out.println("\n	Lechuga "+cont+":");						
+			System.out.println("\n	Lechuga "+l+1+":");						
 			System.out.println("		tipo de lechuga:");
 			lechu.setTipoLechuga(sc.next());
 			System.out.println("		procedencia:");
@@ -71,9 +72,11 @@ public class Lechuga {
 			lechu.setEurosUnidad(sc.nextDouble());	
 			System.out.println("	Introduce el nombre del distribuidor:");
 			//cadena = sc.next();
-			cadena = "FastFood";
+			String cadena = "FastFood";
 			System.out.println("	Introduce el codigo de barras:");
 			lechu.setCod_barras(sc.nextInt());
+			
+			Distribuidor.lectura();
 			//recorremos el ArrayList de distribuidores para buscar el introducido
 			for(int j=0; j<al_distri.size(); j++) {
 				//si lo encontramos
@@ -85,5 +88,5 @@ public class Lechuga {
 			//añadimos la manzana al ArrayList
 			al_lechuga.add(lechu);
 		}
-	}
+	}//class
 }

@@ -14,10 +14,13 @@ public class Almacen {
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
 
 		//***leer distibuidores***
-		Distribuidor.lectura();
+		al_distri=Distribuidor.lectura();
 
 		// *****lectura clientes*****
-		Cliente.lectura();
+		al_cliente=Cliente.lectura();
+		
+		// lectura de productos
+		
 		
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
@@ -50,12 +53,10 @@ public class Almacen {
 						System.out.println("--------------------------------");       
 					}   
 					break;
-				}//case 1 lectura de distribuidores
+				}//FIN 1 lectura de distribuidores
 				case 2: {
 					//***introduccion de productos***		
 					System.out.println("Introduce la informacion de los productos");
-					String cadena = "";
-					
 					//manzana
 					//AHORA ESTA EN SU CLASE
 					Manzana.introducir();
@@ -66,40 +67,6 @@ public class Almacen {
 					//AHORA ESTA EN SU CLASE
 					Leche.introducir();
 					
-					//ArrayList <Leche> al_leche = new ArrayList <Leche>();
-					/*cont=0;
-					System.out.println("¿Cuantos variedades de leche?");
-					int leches=sc.nextInt();
-					for (int l=0; l<leches; l++)
-					{
-						cont=l+1;
-						System.out.println("\n	leche "+cont+":");
-						Leche lec = new Leche();
-						//lec.setTipo(sc.next());
-						System.out.println("		tipo de leche:");
-						lec.setTipo(sc.next());
-						System.out.println("		procedencia:");
-						lec.setProcedencia(sc.next());
-						System.out.println("		euro/litro:");
-						lec.setEurosLitro(sc.nextDouble());
-						System.out.println("	Introduce el nombre del distribuidor:");
-						//cadena = sc.next();
-						cadena = "FastFood";
-						System.out.println("	Introduce el codigo de barras:");
-						lec.setCod_barras(sc.nextInt());			
-						//recorremos el ArrayList de distribuidores para buscar el introducido
-						for(int j=0; j<al_distri.size(); j++)
-						{
-							//si lo encontramos
-							if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-								//le asignamos el valor del distribuidor al objeto leche
-								lec.setDistribuidor(al_distri.get(j));
-								break;//una vez encontrado salimos del bucle
-							}
-						}
-						//añadimos la leche al ArrayList
-						al_leche.add(lec);	
-					}*/
 					//introduccion de productos	
 					//***visualizacion de los productos***
 					//manzana,lechuga y leche
@@ -126,7 +93,7 @@ public class Almacen {
 						System.out.println("DISTRIBUIDOR: "+(al_manza.get(i).getDistribuidor().getNombre()));
 						System.out.println("CIF:" + al_manza.get(i).getDistribuidor().getCIF());
 						System.out.println("DIRECCION: " + al_manza.get(i).getDistribuidor().getDireccion().getPais());
-						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getProcedencia());
+						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getProvincia());
 						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getCiudad());
 						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getDireccion());
 						System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getCpostal());
@@ -229,7 +196,7 @@ public class Almacen {
 					//escritura de productos
 			    	*/
 					break;
-				}//case 2
+				}//case 2 FIN
 				//visualizacion de los productos
 				case 3: {			
 					System.out.println("\nLos clientes:");
@@ -252,7 +219,7 @@ public class Almacen {
 					}  	
 
 					break;
-				}//case 3
+				}//case 3 FIN
 				//introducir clientes
 				// *****cesta*****
 				case 4: {
@@ -418,7 +385,7 @@ public class Almacen {
 					System.out.println("total a pagar: "+total);
 						
 					break;
-				}//case 4
+				}//case 4 FIN
 				// cesta	
 			
 				default: {

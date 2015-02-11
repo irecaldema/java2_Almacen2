@@ -51,6 +51,7 @@ public class Manzana {
 		return cod_barras;
 	}	
 	static public void introducir() throws IOException {
+		Scanner sc = new Scanner(System.in);
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		int cont = 0;
 		System.out.println("¿Cuantos variedades de manzana?");
@@ -74,9 +75,11 @@ public class Manzana {
 			manza.setEurosKilo(sc.nextDouble());			
 			System.out.println("	Introduce el nombre del distribuidor:");
 			//cadena = sc.next();
-			cadena = "FastFood";
+			String cadena = "FastFood";
 			System.out.println("	Introduce el codigo de barras:");
 			manza.setCod_barras(sc.nextInt());
+			
+			Distribuidor.lectura();
 			//recorremos el ArrayList de distribuidores para buscar el introducido
 			for(int j=0; j<al_distri.size(); j++){
 				//si lo encontramos
@@ -88,5 +91,5 @@ public class Manzana {
 			//añadimos la manzana al ArrayList
 			al_manza.add(manza);			
 		}
-	}
+	}//class
 }

@@ -43,16 +43,15 @@ public class Leche {
 	}		
 	
 	static public void introducir() throws IOException {
+		Scanner sc = new Scanner(System.in);
 		//leche
 		//ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
-		cont=0;
 		System.out.println("¿Cuantos variedades de leche?");
 		int leches=sc.nextInt();
 		for (int l=0; l<leches; l++)
 		{
-			cont=l+1;
-			System.out.println("\n	leche "+cont+":");
+			System.out.println("\n	leche "+l+1+":");
 			/*
 			String tipo, procedencia;
 			Double eurosLitro;
@@ -68,21 +67,15 @@ public class Leche {
 			lec.setEurosLitro(sc.nextDouble());
 			System.out.println("	Introduce el nombre del distribuidor:");
 			//cadena = sc.next();
-			cadena = "FastFood";
+			String cadena = "FastFood";
 			System.out.println("	Introduce el codigo de barras:");
-			lec.setCod_barras(sc.nextInt());			
-			//recorremos el ArrayList de distribuidores para buscar el introducido
-			for(int j=0; j<al_distri.size(); j++)
-			{
-				//si lo encontramos
-				if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-					//le asignamos el valor del distribuidor al objeto leche
-					lec.setDistribuidor(al_distri.get(j));
-					break;//una vez encontrado salimos del bucle
-				}
-			}
+			lec.setCod_barras(sc.nextInt());	
+			
+			Distribuidor distri = new Distribuidor();
+			lec.setDistribuidor(distri.busqueda_d(cadena));
+
 			//añadimos la leche al ArrayList
 			al_leche.add(lec);	
 		}
-	}
+	}//class
 }
