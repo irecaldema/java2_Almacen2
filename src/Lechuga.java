@@ -50,15 +50,6 @@ public class Lechuga {
 		Scanner sc = new Scanner(System.in);
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
 		System.out.println("\n	lechuga:");
-		/*
-		String tipoLechuga, procedencia, color;
-		Double eurosUnidad;
-		Distribuidor distribuidor;
-		*/
-		/*System.out.println("¿Cuantos variedades de leche?");
-		int lechugas=sc.nextInt();
-		for (int l=0; l<lechugas; l++)
-		{	*/				
 			Lechuga lechu = new Lechuga();
 			System.out.println("\n	Lechuga:");						
 			System.out.println("		tipo de lechuga:");

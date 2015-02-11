@@ -53,16 +53,7 @@ public class Manzana {
 	static public void introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
-		int cont = 0;
-		/*System.out.println("¿Cuantos variedades de manzana?");
-		int manzanas=sc.nextInt();
-		for (int m=0; m<manzanas; m++)	{*/
 			System.out.println("\n	manzana:");
-			/*
-			String tipoManzana, procedencia, color, 
-			Double eurosKilo;
-			Distribuidor distribuidor;
-			*/
 			Manzana manza = new Manzana();
 			System.out.println("		tipo de manzana:");
 			manza.setTipoManzana(sc.next());
