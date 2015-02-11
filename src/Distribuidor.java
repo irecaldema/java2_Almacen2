@@ -63,9 +63,9 @@ public class Distribuidor {
 			dire.setDireccion(campos[5]);
 			dire.setCpostal(Integer.parseInt(campos[6]));
 			//CONTACTO
-			conta.setNombre(campos[3]);
-			conta.setApellido(campos[4]);
-			conta.setTelefono(Integer.parseInt(campos[5]));
+			conta.setNombre(campos[7]);
+			conta.setApellido(campos[8]);
+			conta.setTelefono(Integer.parseInt(campos[9]));
 			//completamos los datos del distribuidor con los objetos
 			distri.setDireccion(dire);
 			distri.setPersonaContacto(conta);

@@ -8,6 +8,7 @@ public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
+		int producto=0;
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
@@ -25,15 +26,14 @@ public class Almacen {
 		
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
-			System.out.println("		1: distribuidores");
-			System.out.println("		2: productos");
-			System.out.println("		3: clientes");
-			System.out.println("		4: cesta");	
+			System.out.println("		1: visualizar distribuidores");
+			System.out.println("		2: introducir productos");
+			System.out.println("		3: visualizar clientes");
+			System.out.println("		4: cesta de la compra");	
 			System.out.println("		0: salir");			
 			seleccion = sc.nextInt();
 				
-			switch (seleccion) 
-			{
+			switch (seleccion){
 				case 1: {// ***lectura de distribuidores***	
 				System.out.println("\nLista de distribuidores:");				
 					for(int x=0; x<al_distri.size(); x++){
@@ -56,27 +56,46 @@ public class Almacen {
 					break;
 				}//FIN 1 lectura de distribuidores
 				case 2: {
-					//***introduccion de productos***		
-					System.out.println("Introduce la informacion de los productos");
-					//manzana ********************
-					System.out.println("¿Cuantos variedades de manzana?");
-					int cont_manzanas=sc.nextInt();
-					for(int i = 0;i<cont_manzanas;i++){
-						al_manza.add(Manzana.introducir());
-					}
-					//lechuga ********************
-					System.out.println("¿Cuantos variedades de leche?");
-					int cont_lechugas=sc.nextInt();
-					for(int i = 0;i<cont_lechugas;i++){
-						al_lechuga.add(Lechuga.introducir());
-					}
-					//LECHE ********************
-					System.out.println("¿Cuantos variedades de leche?");
-					int cont_leches=sc.nextInt();
-					for(int i = 0;i<cont_leches;i++){
-						al_leche.add(Leche.introducir());
-					}
-					
+					do { //while (producto!=0){
+						System.out.println("\n	Introduce el numero correspondiente:");
+						System.out.println("		1: Manzana");
+						System.out.println("		2: Lechuga");
+						System.out.println("		3: Leche");	
+						System.out.println("		0: salir");			
+						producto = sc.nextInt();
+							
+						switch (producto) {
+							case 1: 			
+								//***introduccion de productos***		
+								System.out.println("Introduce la informacion de los productos");
+								//manzana ********************
+								System.out.println("¿Cuantos variedades de manzana?");
+								int cont_manzanas=sc.nextInt();
+								for(int i = 0;i<cont_manzanas;i++){
+									al_manza.add(Manzana.introducir());
+								}
+								break;
+							case 2: 
+								//lechuga ********************
+								System.out.println("¿Cuantos variedades de leche?");
+								int cont_lechugas=sc.nextInt();
+								for(int i = 0;i<cont_lechugas;i++){
+									al_lechuga.add(Lechuga.introducir());
+								}
+								break;
+							case 3: 
+								//LECHE ********************
+								System.out.println("¿Cuantos variedades de leche?");
+								int cont_leches=sc.nextInt();
+								for(int i = 0;i<cont_leches;i++){
+									al_leche.add(Leche.introducir());
+								}
+								break;
+							default: 
+								System.out.println("\n	No has seleccionado una opcion valida:");
+						}//switch
+					}while (producto!=0); //do{}while();
+			
 					//***visualizacion de los productos***
 					//manzana,lechuga y leche
 					// *********************************************************************************
@@ -366,5 +385,6 @@ public class Almacen {
 				}//default
 			}//switch
 		}while (seleccion!=0); //do{}while();
+		System.out.println("Adios");
 	}//ejecucion
 }//class	
