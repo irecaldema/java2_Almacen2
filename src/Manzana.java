@@ -54,11 +54,10 @@ public class Manzana {
 		Scanner sc = new Scanner(System.in);
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		int cont = 0;
-		System.out.println("¿Cuantos variedades de manzana?");
+		/*System.out.println("¿Cuantos variedades de manzana?");
 		int manzanas=sc.nextInt();
-		for (int m=0; m<manzanas; m++)	{
-			cont=m+1;
-			System.out.println("\n	manzana "+cont+":");
+		for (int m=0; m<manzanas; m++)	{*/
+			System.out.println("\n	manzana:");
 			/*
 			String tipoManzana, procedencia, color, 
 			Double eurosKilo;
@@ -79,17 +78,11 @@ public class Manzana {
 			System.out.println("	Introduce el codigo de barras:");
 			manza.setCod_barras(sc.nextInt());
 			
-			Distribuidor.lectura();
-			//recorremos el ArrayList de distribuidores para buscar el introducido
-			for(int j=0; j<al_distri.size(); j++){
-				//si lo encontramos
-				if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-					//le asignamos el valor del distribuidor al objeto leche
-					manza.setDistribuidor(al_distri.get(j));
-				}
-			}
+			Distribuidor distri = new Distribuidor();
+			manza.setDistribuidor(distri.busqueda_d(cadena));
+			
 			//añadimos la manzana al ArrayList
 			al_manza.add(manza);			
-		}
+		//}
 	}//class
 }

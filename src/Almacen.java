@@ -8,6 +8,8 @@ public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
+		int cantidad=0;
+		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
@@ -57,15 +59,25 @@ public class Almacen {
 				case 2: {
 					//***introduccion de productos***		
 					System.out.println("Introduce la informacion de los productos");
-					//manzana
-					//AHORA ESTA EN SU CLASE
-					Manzana.introducir();
-					//lechuga
-					//AHORA ESTA EN SU CLASE
-					Lechuga.introducir();
-					//LECHE
-					//AHORA ESTA EN SU CLASE
-					Leche.introducir();
+					//manzana ********************
+					System.out.println("¿Cuantos variedades de manzana?");
+					int cont_manzanas=sc.nextInt();
+					for(int i = 0;i<cont_manzanas;i++){
+						al_manza.add(Manzana.introducir());
+					}
+					//lechuga ********************
+					cantidad=0;
+					System.out.println("¿Cuantos variedades de leche?");
+					int cont_lechugas=sc.nextInt();
+					for(int i = 0;i<cont_lechugas;i++){
+						al_lechuga.add(Lechuga.introducir());
+					}
+					//LECHE ********************
+					System.out.println("¿Cuantos variedades de leche?");
+					int cont_leches=sc.nextInt();
+					for(int i = 0;i<cont_leches;i++){
+						al_leche.add(Leche.introducir());
+					}
 					
 					//introduccion de productos	
 					//***visualizacion de los productos***

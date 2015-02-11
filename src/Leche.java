@@ -42,21 +42,9 @@ public class Leche {
 		return cod_barras;
 	}		
 	
-	static public void introducir() throws IOException {
+	static public Leche introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
-		//leche
-		//ArrayList <Leche> al_leche = new ArrayList <Leche>();
-		ArrayList <Leche> al_leche = new ArrayList <Leche>();
-		System.out.println("¿Cuantos variedades de leche?");
-		int leches=sc.nextInt();
-		for (int l=0; l<leches; l++)
-		{
-			System.out.println("\n	leche "+l+1+":");
-			/*
-			String tipo, procedencia;
-			Double eurosLitro;
-			Distribuidor distribuidor;
-			*/
+			System.out.println("\n	leche :");
 			Leche lec = new Leche();
 			//lec.setTipo(sc.next());
 			System.out.println("		tipo de leche:");
@@ -75,7 +63,6 @@ public class Leche {
 			lec.setDistribuidor(distri.busqueda_d(cadena));
 
 			//añadimos la leche al ArrayList
-			al_leche.add(lec);	
-		}
+			return.lec;	
 	}//class
 }

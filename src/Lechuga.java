@@ -55,13 +55,12 @@ public class Lechuga {
 		Double eurosUnidad;
 		Distribuidor distribuidor;
 		*/
-		System.out.println("¿Cuantos variedades de leche?");
+		/*System.out.println("¿Cuantos variedades de leche?");
 		int lechugas=sc.nextInt();
 		for (int l=0; l<lechugas; l++)
-		{					
+		{	*/				
 			Lechuga lechu = new Lechuga();
-			cont=l+1;
-			System.out.println("\n	Lechuga "+l+1+":");						
+			System.out.println("\n	Lechuga:");						
 			System.out.println("		tipo de lechuga:");
 			lechu.setTipoLechuga(sc.next());
 			System.out.println("		procedencia:");
@@ -76,17 +75,11 @@ public class Lechuga {
 			System.out.println("	Introduce el codigo de barras:");
 			lechu.setCod_barras(sc.nextInt());
 			
-			Distribuidor.lectura();
-			//recorremos el ArrayList de distribuidores para buscar el introducido
-			for(int j=0; j<al_distri.size(); j++) {
-				//si lo encontramos
-				if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
-					//le asignamos el valor del distribuidor al objeto leche
-					lechu.setDistribuidor(al_distri.get(j));
-				}
-			}
+			Distribuidor distri = new Distribuidor();
+			lechu.setDistribuidor(distri.busqueda_d(cadena));
+			
 			//añadimos la manzana al ArrayList
 			al_lechuga.add(lechu);
-		}
+		//}
 	}//class
 }
