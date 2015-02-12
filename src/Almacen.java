@@ -14,6 +14,8 @@ public class Almacen {
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
+		
+		//ArrayList <Producto> al_producto = ArrayList <Producto>();
 
 		//***leer distibuidores***
 		al_distri=Distribuidor.lectura();
@@ -69,7 +71,9 @@ public class Almacen {
 								System.out.println("¿Cuantos variedades de manzana?");
 								int cont_manzanas=sc.nextInt();
 								for(int i = 0;i<cont_manzanas;i++){
-									al_manza.add(Manzana.introducir());
+									Manzana manzana = new Manzana();
+									al_manza.add(manzana.introducir());
+									//al_producto
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -79,7 +83,9 @@ public class Almacen {
 								System.out.println("¿Cuantos variedades de leche?");
 								int cont_lechugas=sc.nextInt();
 								for(int i = 0;i<cont_lechugas;i++){
-									al_lechuga.add(Lechuga.introducir());
+									Lechuga lechuga = new Lechuga();
+									al_lechuga.add(lechuga.introducir());
+									//al_producto
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -89,7 +95,9 @@ public class Almacen {
 								System.out.println("¿Cuantos variedades de leche?");
 								int cont_leches=sc.nextInt();
 								for(int i = 0;i<cont_leches;i++){
-									al_leche.add(Leche.introducir());
+									Leche leche = new Leche();
+									al_leche.add(leche.introducir());
+									//al_producto
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -106,7 +114,7 @@ public class Almacen {
 					// *********************************************************************************
 					System.out.println("****Manzana****");
 					for(int i = 0;i<al_manza.size();i++)	{
-						System.out.println("Tipo de manzana: "+(al_manza.get(i).getTipoManzana()));
+						System.out.println("Tipo de manzana: "+(al_manza.get(i).getTipo()));
 						System.out.println("Prcedencia: "+(al_manza.get(i).getProcedencia()));
 						System.out.println("Color: "+(al_manza.get(i).getColor()));
 						System.out.println("euro/Kg: "+(al_manza.get(i).getEurosKilo()));
@@ -127,7 +135,7 @@ public class Almacen {
 					// *********************************************************************************
 					System.out.println("****Lechuga****");
 					for(int i = 0;i<al_lechuga.size();i++)	{
-						System.out.println("Tipo de lechuga: "+(al_lechuga.get(i).getTipoLechuga()));
+						System.out.println("Tipo de lechuga: "+(al_lechuga.get(i).getTipo()));
 						System.out.println("Prcedencia: "+(al_lechuga.get(i).getProcedencia()));
 						System.out.println("Color: "+(al_lechuga.get(i).getColor()));
 						System.out.println("euro/Unidad: "+(al_lechuga.get(i).getEurosUnidad()));
@@ -228,9 +236,9 @@ public class Almacen {
 					double suma=0, precio=0;
 					for (int k = 0; k<num_compras; k++){
 						// ***lectura de productos***
-						al_lechuga.clear();
-						al_manza.clear();
-						al_leche.clear();
+						//al_lechuga.clear();
+						//al_manza.clear();
+						//al_leche.clear();
 						FileReader fr3 = new FileReader("productos.txt");
 						BufferedReader br3 = new BufferedReader(fr3); 
 						String [] campos3 = null;
@@ -258,7 +266,7 @@ public class Almacen {
 									*/
 										Manzana manza = new Manzana();
 										System.out.println("-----manzana "+(p+1)+"-----");
-										System.out.println("Producto: "+campos5[0]);manza.setTipoManzana(campos5[0]);
+										System.out.println("Producto: "+campos5[0]);manza.setTipo(campos5[0]);
 										System.out.println("Prcedencia: "+campos5[1]);manza.setProcedencia(campos5[1]);
 										System.out.println("Color: "+campos5[2]);manza.setColor(campos5[2]);
 										System.out.println("Euros/kilo: "+campos5[3]);manza.setEurosKilo(Double.parseDouble(campos5[3]));
@@ -279,7 +287,7 @@ public class Almacen {
 										else {
 											Lechuga lechuga = new Lechuga();
 											System.out.println("-----lechuga "+(p+1)+"-----");
-											System.out.println("Producto: "+campos5[0]);lechuga.setTipoLechuga(campos5[0]);
+											System.out.println("Producto: "+campos5[0]);lechuga.setTipo(campos5[0]);
 											System.out.println("Prcedencia: "+campos5[1]);lechuga.setProcedencia(campos5[1]);
 											System.out.println("Color: "+campos5[2]);lechuga.setColor(campos5[2]);
 											System.out.println("Euros/unidad: "+campos5[3]);lechuga.setEurosUnidad(Double.parseDouble(campos5[3]));

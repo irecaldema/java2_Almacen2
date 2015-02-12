@@ -1,26 +1,26 @@
 import java.io.IOException;
 import java.util.Scanner;
-public class Lechuga {
+public class Lechuga extends Producto {
     //propiedades
-    private String tipoLechuga, procedencia, color;
+    private /*String tipoLechuga, procedencia,*/String color;
     private Double eurosUnidad;
-    private Distribuidor distribuidor;
-	private int cod_barras;
+    //private Distribuidor distribuidor;
+	//private int cod_barras;
     
     //métodos getter y setter
-	public void setTipoLechuga(String tipoLechuga) {
+	/*public void setTipoLechuga(String tipoLechuga) {
 		this.tipoLechuga = tipoLechuga;
 	}
 	public void setProcedencia(String procedencia) {
 		this.procedencia = procedencia;
-	}
+	}*/
 	public void setColor(String color) {
 		this.color = color;
 	}
 	public void setEurosUnidad(Double eurosUnidad) {
 		this.eurosUnidad = eurosUnidad;
 	}
-	public void setDistribuidor(Distribuidor distribuidor) {
+	/*public void setDistribuidor(Distribuidor distribuidor) {
 		this.distribuidor = distribuidor;
 	}
 	public void setCod_barras(int cod_barras) {
@@ -32,26 +32,26 @@ public class Lechuga {
 	}
 	public String getProcedencia() {
 		return procedencia;
-	}
+	}*/
 	public String getColor() {
 		return color;
 	}
 	public Double getEurosUnidad() {
 		return eurosUnidad;
 	}	
-	public Distribuidor getDistribuidor() {
+	/*public Distribuidor getDistribuidor() {
 		return distribuidor;
 	}
 	public int getCod_barras() {
 		return cod_barras;
-	}	
-	static public Lechuga introducir() throws IOException {
+	}*/	
+	@Override public Lechuga introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\n	lechuga:");
 			Lechuga lechu = new Lechuga();
 			System.out.println("\n	Lechuga:");						
 			System.out.println("		Tipo de lechuga:");
-			lechu.setTipoLechuga(sc.next());
+			lechu.setTipo(sc.next());
 			System.out.println("		Procedencia:");
 			lechu.setProcedencia(sc.next());
 			System.out.println("		Color:");

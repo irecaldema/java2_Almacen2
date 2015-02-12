@@ -1,14 +1,14 @@
 import java.io.IOException;
 import java.util.Scanner;
-public class Manzana {
+public class Manzana extends Producto {
     //propiedades
-    private String tipoManzana, procedencia, color;
+    private String /*tipoManzana, procedencia,*/ color;
     private Double eurosKilo;
-    private Distribuidor distribuidor;
-	private int cod_barras;
+    //private Distribuidor distribuidor;
+	//private int cod_barras;
 
     //métodos getter y setter
-	public void setTipoManzana(String tipoManzana) {
+	/*public void setTipoManzana(String tipoManzana) {
 		this.tipoManzana = tipoManzana;
 	}
 	public String getTipoManzana() {
@@ -20,7 +20,7 @@ public class Manzana {
 	}
 	public String getProcedencia() {
 		return procedencia;
-	}
+	}*/
 
 	public void setColor(String color) {
 		this.color = color;
@@ -36,7 +36,7 @@ public class Manzana {
 		return eurosKilo;
 	}
 
-	public void setDistribuidor(Distribuidor distribuidor) {
+	/*public void setDistribuidor(Distribuidor distribuidor) {
 		this.distribuidor = distribuidor;
 	}
 	public Distribuidor getDistribuidor() {
@@ -48,13 +48,13 @@ public class Manzana {
 	}
 	public int getCod_barras() {
 		return cod_barras;
-	}	
-	static public Manzana introducir() throws IOException {
+	}*/
+	@Override public Manzana introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
 			System.out.println("\n	manzana:");
 			Manzana manza = new Manzana();
 			System.out.println("		Tipo de manzana:");
-			manza.setTipoManzana(sc.next());
+			manza.setTipo(sc.next());
 			System.out.println("		Procedencia:");
 			manza.setProcedencia(sc.next());
 			System.out.println("		color:");
