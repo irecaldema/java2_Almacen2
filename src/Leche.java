@@ -59,7 +59,8 @@ public class Leche {
 			
 			Distribuidor distri = new Distribuidor();
 			lec.setDistribuidor(distri.busqueda_d(cadena));
-
+			System.out.println("	Has introducido el producto correctamente");
+			
 			return lec;	
 	}
 }

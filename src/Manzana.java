@@ -69,6 +69,7 @@ public class Manzana {
 			
 			Distribuidor distri = new Distribuidor();
 			manza.setDistribuidor(distri.busqueda_d(cadena));
+			System.out.println("	Has introducido el producto correctamente");
 			
 			return manza;		
 	}

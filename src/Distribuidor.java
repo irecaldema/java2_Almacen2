@@ -75,7 +75,9 @@ public class Distribuidor {
 		return al_distri;
 	}
 	
-	public Distribuidor busqueda_d(String cadena) {
+	public Distribuidor busqueda_d (String cadena ) throws IOException {
+		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
+		al_distri=Distribuidor.lectura();
 		Distribuidor distribuidor_encontrado = new Distribuidor();
 		for(int j=0; j<al_distri.size(); j++) {
 			//si lo encontramos
