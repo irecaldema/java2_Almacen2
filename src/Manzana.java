@@ -9,12 +9,12 @@ public class Manzana extends Producto {
 	public void setColor(String color) {
 		this.color = color;
 	}
-	public String getColor() {
-		return color;
-	}
-
 	public void setEurosKilo(Double eurosKilo) {
 		this.eurosKilo = eurosKilo;
+	}
+	
+	public String getColor() {
+		return color;
 	}
 	public Double getEurosKilo() {
 		return eurosKilo;
