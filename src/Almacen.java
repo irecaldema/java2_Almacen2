@@ -24,11 +24,11 @@ public class Almacen {
 
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
-			System.out.println("		1: visualizar distribuidores");
-			System.out.println("		2: introducir productos");
-			System.out.println("		3: visualizar clientes");
-			System.out.println("		4: cesta de la compra");	
-			System.out.println("		0: salir");			
+			System.out.println("\t\t1: visualizar distribuidores");
+			System.out.println("\t\t2: introducir productos");
+			System.out.println("\t\t3: visualizar clientes");
+			System.out.println("\t\t4: cesta de la compra");	
+			System.out.println("\t\t0: salir");			
 			seleccion = sc.nextInt();
 				
 			switch (seleccion){
@@ -40,15 +40,15 @@ public class Almacen {
 							System.out.println("nombre: " + al_distri.get(x).getNombre());
 							System.out.println("C.I.F.: " + al_distri.get(x).getCIF());
 							System.out.println("direccion: ");
-								System.out.println("	" + al_distri.get(x).getDireccion().getPais());
-								System.out.println("	" + al_distri.get(x).getDireccion().getProvincia());
-								System.out.println("	" + al_distri.get(x).getDireccion().getCiudad());
-								System.out.println("	" + al_distri.get(x).getDireccion().getDireccion());
-								System.out.println("	" + al_distri.get(x).getDireccion().getCpostal());
+								System.out.println("\t" + al_distri.get(x).getDireccion().getPais());
+								System.out.println("\t" + al_distri.get(x).getDireccion().getProvincia());
+								System.out.println("\t" + al_distri.get(x).getDireccion().getCiudad());
+								System.out.println("\t" + al_distri.get(x).getDireccion().getDireccion());
+								System.out.println("\t" + al_distri.get(x).getDireccion().getCpostal());
 							System.out.println("persona de contacto: ");
-								System.out.println("	" + al_distri.get(x).getPersonaContacto().getNombre());
-								System.out.println("	" + al_distri.get(x).getPersonaContacto().getApellido());
-								System.out.println("	" + al_distri.get(x).getPersonaContacto().getTelefono());
+								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getNombre());
+								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getApellido());
+								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getTelefono());
 						System.out.println("--------------------------------");       
 					}   
 					break;
@@ -121,11 +121,11 @@ public class Almacen {
 							System.out.println("NOMBRE: "+(al_manza.get(i).getDistribuidor().getNombre()));
 							System.out.println("CIF:" + al_manza.get(i).getDistribuidor().getCIF());
 							System.out.println("DIRECCION: ");
-							System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getPais());
-							System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getProvincia());
-							System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getCiudad());
-							System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getDireccion());
-							System.out.println("	" + al_manza.get(i).getDistribuidor().getDireccion().getCpostal());
+							System.out.println("\t" + al_manza.get(i).getDistribuidor().getDireccion().getPais());
+							System.out.println("\t" + al_manza.get(i).getDistribuidor().getDireccion().getProvincia());
+							System.out.println("\t" + al_manza.get(i).getDistribuidor().getDireccion().getCiudad());
+							System.out.println("\t" + al_manza.get(i).getDistribuidor().getDireccion().getDireccion());
+							System.out.println("\t" + al_manza.get(i).getDistribuidor().getDireccion().getCpostal());
 							System.out.println("CONTACTO:" + al_manza.get(i).getDistribuidor().getPersonaContacto().getNombre() + " " + al_manza.get(i).getDistribuidor().getPersonaContacto().getApellido());
 							System.out.println("TELEFONO:" + al_manza.get(i).getDistribuidor().getPersonaContacto().getTelefono());
 						System.out.println("Codigo de barras: "+(al_manza.get(i).getCod_barras()));	
@@ -142,11 +142,11 @@ public class Almacen {
 							System.out.println("NOMBRE: "+(al_lechuga.get(i).getDistribuidor().getNombre()));
 							System.out.println("CIF:" + al_lechuga.get(i).getDistribuidor().getCIF());
 							System.out.println("DIRECCION:");
-							System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getPais());
-							System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getProvincia());
-							System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getCiudad());
-							System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getDireccion());
-							System.out.println("	" + al_lechuga.get(i).getDistribuidor().getDireccion().getCpostal());
+							System.out.println("\t" + al_lechuga.get(i).getDistribuidor().getDireccion().getPais());
+							System.out.println("\t" + al_lechuga.get(i).getDistribuidor().getDireccion().getProvincia());
+							System.out.println("\t" + al_lechuga.get(i).getDistribuidor().getDireccion().getCiudad());
+							System.out.println("\t" + al_lechuga.get(i).getDistribuidor().getDireccion().getDireccion());
+							System.out.println("\t" + al_lechuga.get(i).getDistribuidor().getDireccion().getCpostal());
 							System.out.println("CONTACTO:" + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getNombre() + " " + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getApellido());
 							System.out.println("TELEFONO:" + al_lechuga.get(i).getDistribuidor().getPersonaContacto().getTelefono());
 						System.out.println("Codigo de barras: "+(al_lechuga.get(i).getCod_barras()));
@@ -162,11 +162,11 @@ public class Almacen {
 							System.out.println("NOMBRE: "+(al_leche.get(i).getDistribuidor().getNombre()));
 							System.out.println("CIF:" + al_leche.get(i).getDistribuidor().getCIF());
 							System.out.println("DIRECCION:");
-							System.out.println("	" + al_leche.get(i).getDistribuidor().getDireccion().getPais());
-							System.out.println("	" + al_leche.get(i).getDistribuidor().getDireccion().getProvincia());
-							System.out.println("	" + al_leche.get(i).getDistribuidor().getDireccion().getCiudad());
-							System.out.println("	" + al_leche.get(i).getDistribuidor().getDireccion().getDireccion());
-							System.out.println("	" + al_leche.get(i).getDistribuidor().getDireccion().getCpostal());
+							System.out.println("\t" + al_leche.get(i).getDistribuidor().getDireccion().getPais());
+							System.out.println("\t" + al_leche.get(i).getDistribuidor().getDireccion().getProvincia());
+							System.out.println("\t" + al_leche.get(i).getDistribuidor().getDireccion().getCiudad());
+							System.out.println("\t" + al_leche.get(i).getDistribuidor().getDireccion().getDireccion());
+							System.out.println("\t" + al_leche.get(i).getDistribuidor().getDireccion().getCpostal());
 							System.out.println("CONTACTO:" + al_leche.get(i).getDistribuidor().getPersonaContacto().getNombre() + " " + al_leche.get(i).getDistribuidor().getPersonaContacto().getApellido());
 							System.out.println("TELEFONO:" + al_leche.get(i).getDistribuidor().getPersonaContacto().getTelefono());
 						System.out.println("Codigo de barras: "+(al_leche.get(i).getCod_barras()));
@@ -185,11 +185,11 @@ public class Almacen {
 							System.out.println("Apellidos: " + al_cliente.get(x).getApellidos());
 							System.out.println("DNI: " + al_cliente.get(x).getDNI());
 							System.out.println("Direccion: ");
-								System.out.println("	" + al_cliente.get(x).getDireccion().getPais());
-								System.out.println("	" + al_cliente.get(x).getDireccion().getProvincia());
-								System.out.println("	" + al_cliente.get(x).getDireccion().getCiudad());
-								System.out.println("	" + al_cliente.get(x).getDireccion().getDireccion());
-								System.out.println("	" + al_cliente.get(x).getDireccion().getCpostal());
+								System.out.println("\t" + al_cliente.get(x).getDireccion().getPais());
+								System.out.println("\t" + al_cliente.get(x).getDireccion().getProvincia());
+								System.out.println("\t" + al_cliente.get(x).getDireccion().getCiudad());
+								System.out.println("\t" + al_cliente.get(x).getDireccion().getDireccion());
+								System.out.println("\t" + al_cliente.get(x).getDireccion().getCpostal());
 							System.out.println("Numero de socio: " + al_cliente.get(x).getNum_socio());
 							System.out.println("Descuento: " + al_cliente.get(x).getDto());				
 						System.out.println("--------------------------------");       
