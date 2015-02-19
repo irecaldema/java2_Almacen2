@@ -1,7 +1,6 @@
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
-//import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 public class Almacen {
@@ -173,36 +172,6 @@ public class Almacen {
 						System.out.println("Codigo de barras: "+(al_leche.get(i).getCod_barras()));
 						System.out.println("*********************************************************");
 					}
-
-					/*
-					// ***escritura de productos***
-					FileWriter escritor = new FileWriter("productos.txt");
-					String linea="";
-					
-					for(int w = 0;w<al_leche.size();w++)	{
-						//escritor.append(al_leche.get(w));
-						linea="*"+al_leche.get(w).getCod_barras()+","+al_leche.get(w).getEurosLitro()+"*";
-						escritor.append(linea);
-					}
-					if (al_leche.size()>0;)
-						escritor.append(";");
-					for(int w = 0;w<al_lechuga.size();w++)	{
-						//escritor.append(al_lechuga.get(w));
-						linea="*"+al_lechuga.get(w).getCod_barras()+","+al_lechuga.get(w).getEurosUnidad()+"*";						
-						escritor.append(linea);
-					}
-					if (al_lechuga.size()>0;)
-						escritor.append(";");
-					for(int w = 0;w<al_manza.size();w++)	{
-						//escritor.append(al_manza.get(w));
-						linea="*"+al_manza.get(w).getCod_barras()+","+al_manza.get(w).getEurosKilo()+"*";						
-						escritor.append(linea);
-					}
-					
-					System.out.println("productos guardados");
-					escritor.close();
-					//escritura de productos
-			    	*/
 					break;
 				//case 2 FIN
 				//visualizacion de los productos
@@ -258,12 +227,6 @@ public class Almacen {
 									campos5 = campos4[p].split(",");
 																	//System.out.println(campos5[0]+" c5: "+campos5.length);
 									if(o==0){
-									/*
-									String tipoManzana, procedencia, color, 
-									Double eurosKilo;
-									Distribuidor distribuidor;
-									int cod_barras;
-									*/
 										Manzana manza = new Manzana();
 										System.out.println("-----manzana "+(p+1)+"-----");
 										System.out.println("Producto: "+campos5[0]);manza.setTipo(campos5[0]);
@@ -277,12 +240,6 @@ public class Almacen {
 										System.out.println("---------------------------");al_manza.add(manza);
 									}	
 									else if(o==1){
-										/*
-										String tipoLechuga, procedencia, color;
-										Double eurosUnidad;
-										Distribuidor distribuidor;
-										int cod_barras;
-										*/
 										if (campos5[0].equalsIgnoreCase("nulo")){}
 										else {
 											Lechuga lechuga = new Lechuga();
@@ -299,12 +256,6 @@ public class Almacen {
 										}	
 									}
 									else if(o==2) {
-										/*
-				    					String tipo, procedencia;
-										Double eurosLitro;
-										Distribuidor distribuidor;
-										int cod_barras;
-										*/
 										if (campos5[0].equalsIgnoreCase("nulo")){}
 										else {
 											Leche leche = new Leche();
