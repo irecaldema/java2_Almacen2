@@ -18,11 +18,9 @@ public class Almacen {
 
 		//***leer distibuidores***
 		try {
-			Distribuidor.lectura("distribuidores.txt");
+			Distribuidores.lectura("distribuidores.txt");
 		}/*catch(){
-			
 		}*/finally {
-			
 		}
 		
 		// *****lectura clientes*****
