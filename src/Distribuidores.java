@@ -6,7 +6,7 @@ public class Distribuidores {
     
     static ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor>();
     
-    static public void lectura(String fichero) throws IOException {
+    public static void lectura(String fichero) throws IOException {
 		//ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		FileReader fr = new FileReader(fichero);
 		BufferedReader br = new BufferedReader(fr); 
@@ -41,6 +41,33 @@ public class Distribuidores {
 			//añadimos el objeto distribuidor al ArrayList
 			al_distri.add(distri);
 		}
+	}
+	
+    public static void mostrar(){
+        if (Distribuidores.al_distri.size()==0){
+            try {
+                lectura("distribuidores.txt");
+            }  catch(IOException e) { 
+            }    
+	    } else {
+    		for(int x=0; x<Distribuidores.al_distri.size(); x++){
+    			System.out.println("--------------------------------");	
+    			//nombre,CIF,o_direccion,o_personaContacto
+    				System.out.println("nombre: " + Distribuidores.al_distri.get(x).getNombre());
+    				System.out.println("C.I.F.: " + Distribuidores.al_distri.get(x).getCIF());
+    				System.out.println("direccion: ");
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getPais());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getProvincia());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getCiudad());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getDireccion());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getCpostal());
+    				System.out.println("persona de contacto: ");
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getNombre());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getApellido());
+    					System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getTelefono());
+    			System.out.println("--------------------------------");       
+    		}
+	    }	
 	}
     
 }    

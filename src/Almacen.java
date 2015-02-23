@@ -9,12 +9,9 @@ public class Almacen {
 		int seleccion=0;
 		int producto=0;
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
-		/*ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();*/
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
-		
-		//ArrayList <Producto> al_producto = ArrayList <Producto>();
 
 		//***leer distibuidores***
 		try {
@@ -37,7 +34,9 @@ public class Almacen {
 				
 			switch (seleccion){
 				case 1: // ***lectura de distribuidores***	
-				System.out.println("\nLista de distribuidores:");				
+				System.out.println("\nLista de distribuidores:");
+				Distribuidores.mostrar();
+				/*
 					for(int x=0; x<Distribuidores.al_distri.size(); x++){
 						System.out.println("--------------------------------");	
 						//nombre,CIF,o_direccion,o_personaContacto
@@ -54,7 +53,8 @@ public class Almacen {
 								System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getApellido());
 								System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getTelefono());
 						System.out.println("--------------------------------");       
-					}   
+					} 
+				*/	
 					break;
 				//FIN 1 lectura de distribuidores
 				case 2: 
