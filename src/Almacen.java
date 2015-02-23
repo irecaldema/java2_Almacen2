@@ -8,7 +8,7 @@ public class Almacen {
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
 		int producto=0;
-		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
+		
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
@@ -21,7 +21,7 @@ public class Almacen {
 		}
 		
 		// *****lectura clientes*****
-		al_cliente=Cliente.lectura();
+		Clientes.lectura();
 
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
@@ -163,20 +163,20 @@ public class Almacen {
 				case 3: 			
 					System.out.println("\nLos clientes:");
 					//mostrar los clientes por pantalla
-					for(int x=0; x<al_cliente.size(); x++){
+					for(int x=0; x<Clientes.al_cliente.size(); x++){
 						System.out.println("--------------------------------");	
 						//  String nombre, apellidos, DNI; Direccion direccion; Double num_socio, dto;
-							System.out.println("Nombre: " + al_cliente.get(x).getNombre());
-							System.out.println("Apellidos: " + al_cliente.get(x).getApellidos());
-							System.out.println("DNI: " + al_cliente.get(x).getDNI());
+							System.out.println("Nombre: " + Clientes.al_cliente.get(x).getNombre());
+							System.out.println("Apellidos: " + Clientes.al_cliente.get(x).getApellidos());
+							System.out.println("DNI: " + Clientes.al_cliente.get(x).getDNI());
 							System.out.println("Direccion: ");
-								System.out.println("\t" + al_cliente.get(x).getDireccion().getPais());
-								System.out.println("\t" + al_cliente.get(x).getDireccion().getProvincia());
-								System.out.println("\t" + al_cliente.get(x).getDireccion().getCiudad());
-								System.out.println("\t" + al_cliente.get(x).getDireccion().getDireccion());
-								System.out.println("\t" + al_cliente.get(x).getDireccion().getCpostal());
-							System.out.println("Numero de socio: " + al_cliente.get(x).getNum_socio());
-							System.out.println("Descuento: " + al_cliente.get(x).getDto());				
+								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getPais());
+								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getProvincia());
+								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getCiudad());
+								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getDireccion());
+								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getCpostal());
+							System.out.println("Numero de socio: " + Clientes.al_cliente.get(x).getNum_socio());
+							System.out.println("Descuento: " + Clientes.al_cliente.get(x).getDto());				
 						System.out.println("--------------------------------");       
 					}  	
 
@@ -294,16 +294,8 @@ public class Almacen {
 						suma=suma+precio;
 					}//busqueda del producto en leches
 					System.out.println("Introduce el DNI del cliente");
-					String DNI_clie = sc.next();
-					double descuento=0;
-					for(int j=0; j<al_cliente.size(); j++) {
-						//si lo encontramos
-						if (DNI_clie.equalsIgnoreCase(al_cliente.get(j).getDNI())){
-							//le asignamos el valor del distribuidor al objeto leche
-							descuento=al_cliente.get(j).getDto();
-							break;
-						}
-					}
+					Cliente comprador = new Cliente();
+					double descuento=comprador.busqueda_c(sc.next()).getDto();
 					double total =suma-suma*descuento/100;
 					System.out.println("total a pagar: "+total);
 						
