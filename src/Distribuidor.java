@@ -78,11 +78,11 @@ public class Distribuidor {
 	public Distribuidor busqueda_d (String cadena ) throws IOException {
 		Distribuidor.lectura("distribuidores.txt");
 		Distribuidor distribuidor_encontrado = new Distribuidor();
-		for(int j=0; j<Distribuidor.al_distri.size(); j++) {
+		for(int j=0; j<Distribuidores.al_distri.size(); j++) {
 			//si lo encontramos
-			if (cadena.equalsIgnoreCase(Distribuidor.al_distri.get(j).getNombre())){
+			if (cadena.equalsIgnoreCase(Distribuidores.al_distri.get(j).getNombre())){
 				//le asignamos el valor del distribuidor al objeto leche
-				distribuidor_encontrado=Distribuidor.al_distri.get(j);
+				distribuidor_encontrado=Distribuidores.al_distri.get(j);
 			}
 			break; //una vez encontrado salimos del bucle
 		}
