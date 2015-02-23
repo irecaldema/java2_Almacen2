@@ -34,27 +34,8 @@ public class Almacen {
 				
 			switch (seleccion){
 				case 1: // ***lectura de distribuidores***	
-				System.out.println("\nLista de distribuidores:");
-				Distribuidores.mostrar();
-				/*
-					for(int x=0; x<Distribuidores.al_distri.size(); x++){
-						System.out.println("--------------------------------");	
-						//nombre,CIF,o_direccion,o_personaContacto
-							System.out.println("nombre: " + Distribuidores.al_distri.get(x).getNombre());
-							System.out.println("C.I.F.: " + Distribuidores.al_distri.get(x).getCIF());
-							System.out.println("direccion: ");
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getPais());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getProvincia());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getCiudad());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getDireccion());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getDireccion().getCpostal());
-							System.out.println("persona de contacto: ");
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getNombre());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getApellido());
-								System.out.println("\t" + Distribuidores.al_distri.get(x).getPersonaContacto().getTelefono());
-						System.out.println("--------------------------------");       
-					} 
-				*/	
+					System.out.println("\nLista de distribuidores:");
+					Distribuidores.mostrar();
 					break;
 				//FIN 1 lectura de distribuidores
 				case 2: 
