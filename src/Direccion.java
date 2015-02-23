@@ -37,4 +37,15 @@ public class Direccion {
 	public int getCpostal(){
 		return this.cpostal;
     }
+    
+    public String formatoDireccion(){
+		String string_direccion = 
+		"Pais: " + this.pais+
+		" Provincia: " + this.provincia+
+		" Ciudad: " + this.ciudad+
+		" Direccion: " + this.direccion+
+		" C.P.: " + this.cpostal;
+		
+		return string_direccion;
+    }
 }

@@ -51,4 +51,18 @@ public class Distribuidor {
 		}
 		return distribuidor_encontrado;
 	}
+	
+	public String formatoDistribuidor(){
+		String string_distribuidor = 
+		"--------------------------------\n"+
+		"nombre: " + this.nombre+"\n"+
+		"C.I.F.: " + this.CIF+"\n"+
+		"direccion: \n"+
+		"\t" + this.direccion.formatoDireccion()+"\n"+
+		"persona de contacto: \n"+
+		"\t" + this.personaContacto.formatoContacto()+"\n"+
+		"--------------------------------\n";
+		
+		return string_distribuidor;
+	}
 }

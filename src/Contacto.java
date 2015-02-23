@@ -23,4 +23,14 @@ public class Contacto {
 	public int getTelefono() {
 		return telefono;
 	}  	
+	
+	public String formatoContacto(){
+		String string_contacto = 
+		"Nombre: " + this.nombre+
+		" Apellido: " + this.apellido+
+		" N.Telefono: " + this.telefono;
+		
+		return string_contacto;
+    }
+
 }
