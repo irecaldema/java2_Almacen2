@@ -17,8 +17,14 @@ public class Almacen {
 		//ArrayList <Producto> al_producto = ArrayList <Producto>();
 
 		//***leer distibuidores***
-		/*al_distri=*/Distribuidor.lectura("distribuidores.txt");
-
+		try {
+			Distribuidor.lectura("distribuidores.txt");
+		}/*catch(){
+			
+		}*/finally {
+			
+		}
+		
 		// *****lectura clientes*****
 		al_cliente=Cliente.lectura();
 
