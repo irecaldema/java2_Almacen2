@@ -37,9 +37,9 @@ public class Distribuidor {
 		return personaContacto;
 	}
 	
-	static public ArrayList <Distribuidor> lectura() throws IOException {
+	static public ArrayList <Distribuidor> lectura(String fichero) throws IOException {
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
-		FileReader fr = new FileReader("distribuidores.txt");
+		FileReader fr = new FileReader(fichero);
 		BufferedReader br = new BufferedReader(fr); 
 		String [] campos = null;
 		String s;
@@ -77,7 +77,7 @@ public class Distribuidor {
 	
 	public Distribuidor busqueda_d (String cadena ) throws IOException {
 		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
-		al_distri=Distribuidor.lectura();
+		al_distri=Distribuidor.lectura("distribuidores.txt");
 		Distribuidor distribuidor_encontrado = new Distribuidor();
 		for(int j=0; j<al_distri.size(); j++) {
 			//si lo encontramos
