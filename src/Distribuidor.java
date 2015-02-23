@@ -70,7 +70,7 @@ public class Distribuidor {
 			distri.setDireccion(dire);
 			distri.setPersonaContacto(conta);
 			//añadimos el objeto distribuidor al ArrayList
-			Distribuidor.al_distri.add(distri);
+			Distribuidores.al_distri.add(distri);
 		}
 		//return al_distri;
 	}
