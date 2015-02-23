@@ -9,7 +9,7 @@ public class Almacen {
 		int seleccion=0;
 		int producto=0;
 		ArrayList <Cliente> al_cliente = new ArrayList <Cliente>();
-		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
+		/*ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();*/
 		ArrayList <Leche> al_leche = new ArrayList <Leche>();
 		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
 		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
@@ -17,7 +17,7 @@ public class Almacen {
 		//ArrayList <Producto> al_producto = ArrayList <Producto>();
 
 		//***leer distibuidores***
-		al_distri=Distribuidor.lectura("distribuidores.txt");
+		/*al_distri=*/Distribuidor.lectura("distribuidores.txt");
 
 		// *****lectura clientes*****
 		al_cliente=Cliente.lectura();
@@ -34,21 +34,21 @@ public class Almacen {
 			switch (seleccion){
 				case 1: // ***lectura de distribuidores***	
 				System.out.println("\nLista de distribuidores:");				
-					for(int x=0; x<al_distri.size(); x++){
+					for(int x=0; x<Distribuidor.al_distri.size(); x++){
 						System.out.println("--------------------------------");	
 						//nombre,CIF,o_direccion,o_personaContacto
-							System.out.println("nombre: " + al_distri.get(x).getNombre());
-							System.out.println("C.I.F.: " + al_distri.get(x).getCIF());
+							System.out.println("nombre: " + Distribuidor.al_distri.get(x).getNombre());
+							System.out.println("C.I.F.: " + Distribuidor.al_distri.get(x).getCIF());
 							System.out.println("direccion: ");
-								System.out.println("\t" + al_distri.get(x).getDireccion().getPais());
-								System.out.println("\t" + al_distri.get(x).getDireccion().getProvincia());
-								System.out.println("\t" + al_distri.get(x).getDireccion().getCiudad());
-								System.out.println("\t" + al_distri.get(x).getDireccion().getDireccion());
-								System.out.println("\t" + al_distri.get(x).getDireccion().getCpostal());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getDireccion().getPais());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getDireccion().getProvincia());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getDireccion().getCiudad());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getDireccion().getDireccion());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getDireccion().getCpostal());
 							System.out.println("persona de contacto: ");
-								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getNombre());
-								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getApellido());
-								System.out.println("\t" + al_distri.get(x).getPersonaContacto().getTelefono());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getPersonaContacto().getNombre());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getPersonaContacto().getApellido());
+								System.out.println("\t" + Distribuidor.al_distri.get(x).getPersonaContacto().getTelefono());
 						System.out.println("--------------------------------");       
 					}   
 					break;
