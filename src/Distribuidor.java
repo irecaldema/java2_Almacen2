@@ -37,8 +37,8 @@ public class Distribuidor {
 		return personaContacto;
 	}
 	
-	static public ArrayList <Distribuidor> lectura(String fichero) throws IOException {
-		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
+	static public /*ArrayList <Distribuidor>*/ void lectura(String fichero) throws IOException {
+		//ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
 		FileReader fr = new FileReader(fichero);
 		BufferedReader br = new BufferedReader(fr); 
 		String [] campos = null;
@@ -70,20 +70,19 @@ public class Distribuidor {
 			distri.setDireccion(dire);
 			distri.setPersonaContacto(conta);
 			//añadimos el objeto distribuidor al ArrayList
-			al_distri.add(distri);
+			Distribuidor.al_distri.add(distri);
 		}
-		return al_distri;
+		//return al_distri;
 	}
 	
 	public Distribuidor busqueda_d (String cadena ) throws IOException {
-		ArrayList <Distribuidor> al_distri = new ArrayList <Distribuidor> ();
-		al_distri=Distribuidor.lectura("distribuidores.txt");
+		Distribuidor.lectura("distribuidores.txt");
 		Distribuidor distribuidor_encontrado = new Distribuidor();
-		for(int j=0; j<al_distri.size(); j++) {
+		for(int j=0; j<Distribuidor.al_distri.size(); j++) {
 			//si lo encontramos
-			if (cadena.equalsIgnoreCase(al_distri.get(j).getNombre())){
+			if (cadena.equalsIgnoreCase(Distribuidor.al_distri.get(j).getNombre())){
 				//le asignamos el valor del distribuidor al objeto leche
-				distribuidor_encontrado=al_distri.get(j);
+				distribuidor_encontrado=Distribuidor.al_distri.get(j);
 			}
 			break; //una vez encontrado salimos del bucle
 		}
