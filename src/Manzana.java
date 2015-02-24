@@ -24,23 +24,23 @@ public class Manzana extends Producto {
 		Scanner sc = new Scanner(System.in);
 			System.out.println("\n	manzana:");
 			Manzana manza = new Manzana();
-			System.out.println("		Tipo de manzana:");
+			System.out.println("\t\tTipo de manzana:");
 			manza.setTipo(sc.next());
-			System.out.println("		Procedencia:");
+			System.out.println("\t\tProcedencia:");
 			manza.setProcedencia(sc.next());
-			System.out.println("		color:");
+			System.out.println("\t\tcolor:");
 			manza.setColor(sc.next());
-			System.out.println("		euro/kilo:");
+			System.out.println("\t\teuro/kilo:");
 			manza.setEurosKilo(sc.nextDouble());			
-			System.out.println("	Introduce el nombre del distribuidor:");
+			System.out.println("\t\tIntroduce el nombre del distribuidor:");
 			//cadena = sc.next();
 			String cadena = "FastFood";
-			System.out.println("	Introduce el codigo de barras:");
+			System.out.println("\t\t\tIntroduce el codigo de barras:");
 			manza.setCod_barras(sc.nextInt());
 			
 			Distribuidor distri = new Distribuidor();
 			manza.setDistribuidor(distri.busqueda_d(cadena));
-			System.out.println("	Has introducido el producto correctamente");
+			System.out.println("\t\tHas introducido el producto correctamente");
 			
 			return manza;		
 	}

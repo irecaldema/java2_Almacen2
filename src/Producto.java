@@ -35,4 +35,23 @@ public class Producto {
 	}
 	
 	public void introducir() throws IOException{};
+	
+	public String formatoProducto(){
+		/*
+		private String tipo, procedencia;
+	    private Distribuidor distribuidor;
+		private int cod_barras;
+		*/
+		
+		String string_producto = 
+		"--------------------------------\n"+
+		"producto: " + this.tipo+"\n"+
+		"procedencia: " + this.procedencia+"\n"+
+		"distribuidor: \n"+
+		"\t" + this.distribuidor.formatoDistribuidor()+"\n"+
+		"codigo de barras: " + this.cod_barras+"\n"+
+		"--------------------------------\n";
+		
+		return string_producto;
+	}
 }

@@ -20,13 +20,12 @@ public class Almacen {
 			//Distribuidores.lectura("distribuidores.txt");
 			Distribuidores.lectura("m.txt");//no existe
 		} catch (FileNotFoundException errorifico) {
-			System.out.println(" Error en la lectura: "+errorifico+" (try catch)");
+			System.out.println("Error en la lectura: "+errorifico+" (try catch)");
 			System.out.println("Escriba el nombre del archivo de distribuidores correcto");
 			Distribuidores.lectura(sc.next());
 		} finally {
 			System.out.println("Lectura realizada");
 		}
-		
 		// *****lectura clientes*****
 		Clientes.lectura();
 		
@@ -107,7 +106,7 @@ public class Almacen {
 							case 0:
 								break;
 							default: 
-								System.out.println("\n	No has seleccionado una opcion valida:");
+								System.out.println("\n\tNo has seleccionado una opcion valida:");
 						}//switch
 					}while (producto!=0); //do{}while();
 			
@@ -203,7 +202,7 @@ public class Almacen {
 				//introducir clientes
 				// *****cesta*****
 				case 4: 
-					System.out.println("\n	Introduce el numero de productos a comprar:");
+					System.out.println("\n\tIntroduce el numero de productos a comprar:");
 					int num_compras = sc.nextInt();
 					double suma=0, precio=0;
 					for (int k = 0; k<num_compras; k++){
@@ -280,7 +279,7 @@ public class Almacen {
 						}//while*/
 						// lectura de productos
 					//***comprar prductos segun el codigo de barras***	
-						System.out.println("\n	Introduce el codigo de barras del producto:");
+						System.out.println("\n\tIntroduce el codigo de barras del producto:");
 						int cod_barras=sc.nextInt();
 						//*** busqueda del producto en manzanas	***
 						for (int i=0; i<al_manza.size();i++){
@@ -326,10 +325,10 @@ public class Almacen {
 				case 0: 
 					break;
 				default: 
-					System.out.println("\n	No has seleccionado una opcion valida:");
+					System.out.println("\n\tNo has seleccionado una opcion valida:");
 				//default
 			}//switch
 		}while (seleccion!=0); //do{}while();
-		System.out.println("Adios");
+		System.out.println("Adios piltrafilla");
 	}//ejecucion
 }//class	
