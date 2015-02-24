@@ -126,14 +126,12 @@ public class Almacen {
 					double total =suma-suma*descuento/100;
 					System.out.println("total a pagar: "+total);
 					break;
-				//case 4 FIN
-				// cesta	
+				//case 4: cesta FIN 
 				case 0: 
 					break;
 				default: 
 					System.out.println("\n\tNo has seleccionado una opcion valida:");
-				//default
-			}//switch
+			}//switch (seleccion)
 		}while (seleccion!=0); //do{}while();
 		System.out.println("Adios piltrafilla");
 	}//ejecucion
