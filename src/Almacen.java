@@ -113,19 +113,16 @@ public class Almacen {
 					Clientes.mostrar();
 					break;
 				//case 3 FIN
-				//introducir clientes
 				// *****cesta*****
 				case 4: 
 					System.out.println("\n\tIntroduce el numero de productos a comprar:");
 					int num_compras = sc.nextInt();
 					double suma=0, precio=0, cantidad=0;
 					for (int k = 0; k<num_compras; k++){
-						// ***lectura de productos***
 						//Productos mostrar
 						System.out.println("Los productos:");
 						Productos.mostrar();
 
-						// lectura de productos
 					//***comprar prductos segun el codigo de barras***	
 						System.out.println("\n\tIntroduce el codigo de barras del producto:");
 						int cod_barras=sc.nextInt();
