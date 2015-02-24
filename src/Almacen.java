@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
+import java.util.InputMismatchException;
 public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
@@ -28,6 +29,9 @@ public class Almacen {
 		
 		// *****lectura clientes*****
 		Clientes.lectura();
+		
+		// *****lectura productos*****
+		Productos.lectura();
 
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
@@ -35,9 +39,13 @@ public class Almacen {
 			System.out.println("\t\t2: introducir productos");
 			System.out.println("\t\t3: visualizar clientes");
 			System.out.println("\t\t4: cesta de la compra");	
-			System.out.println("\t\t0: salir");			
-			seleccion = sc.nextInt();
-				
+			System.out.println("\t\t0: salir");		
+			try{
+				seleccion = sc.nextInt();
+			}catch(InputMismatchException e){
+				System.out.println("Se han introducido caracteres no numéricos "+e);
+				seleccion = sc.nextInt();
+			}	
 			switch (seleccion){
 				case 1: // ***lectura de distribuidores***	
 					System.out.println("\nLista de distribuidores:");
@@ -46,13 +54,17 @@ public class Almacen {
 				//FIN 1 lectura de distribuidores
 				case 2: 
 					do { //while (producto!=0){
-						System.out.println("\n	Introduce el numero correspondiente:");
-						System.out.println("		1: Manzana");
-						System.out.println("		2: Lechuga");
-						System.out.println("		3: Leche");	
-						System.out.println("		0: salir");			
-						producto = sc.nextInt();
-							
+						System.out.println("\n\tIntroduce el numero correspondiente:");
+						System.out.println("\t\t1: Manzana");
+						System.out.println("\t\t2: Lechuga");
+						System.out.println("\t\t3: Leche");	
+						System.out.println("\t\t0: salir");
+						try{
+							producto = sc.nextInt();
+						}catch(InputMismatchException ex){
+				            System.out.println("Se han introducido caracteres no numéricos 2 "+ex+" 2 ");
+				            producto = sc.nextInt();
+				        }
 						switch (producto) {
 							case 1: 			
 								//***introduccion de productos***		
@@ -63,7 +75,7 @@ public class Almacen {
 								for(int i = 0;i<cont_manzanas;i++){
 									Manzana manzana = new Manzana();
 									al_manza.add(manzana.introducir());
-									//al_producto
+									//al_producto.add(manzana.introducir())
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -75,7 +87,7 @@ public class Almacen {
 								for(int i = 0;i<cont_lechugas;i++){
 									Lechuga lechuga = new Lechuga();
 									al_lechuga.add(lechuga.introducir());
-									//al_producto
+									//al_producto.add(lechuga.introducir())
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -87,7 +99,7 @@ public class Almacen {
 								for(int i = 0;i<cont_leches;i++){
 									Leche leche = new Leche();
 									al_leche.add(leche.introducir());
-									//al_producto
+									//al_producto.add(leche.introducir())
 								}
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
@@ -199,6 +211,9 @@ public class Almacen {
 						//al_lechuga.clear();
 						//al_manza.clear();
 						//al_leche.clear();
+						//Productos mostrar
+						Productos.mostrar();
+						/*
 						FileReader fr3 = new FileReader("productos.txt");
 						BufferedReader br3 = new BufferedReader(fr3); 
 						String [] campos3 = null;
@@ -262,7 +277,7 @@ public class Almacen {
 									}//else if
 								}//for	
 							} //for
-						}//while
+						}//while*/
 						// lectura de productos
 					//***comprar prductos segun el codigo de barras***	
 						System.out.println("\n	Introduce el codigo de barras del producto:");

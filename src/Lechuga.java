@@ -25,23 +25,23 @@ public class Lechuga extends Producto {
 		System.out.println("\n	lechuga:");
 			Lechuga lechu = new Lechuga();
 			System.out.println("\n	Lechuga:");						
-			System.out.println("		Tipo de lechuga:");
+			System.out.println("\t\tTipo de lechuga:");
 			lechu.setTipo(sc.next());
-			System.out.println("		Procedencia:");
+			System.out.println("\t\tProcedencia:");
 			lechu.setProcedencia(sc.next());
-			System.out.println("		Color:");
+			System.out.println("\t\tColor:");
 			lechu.setColor(sc.next());
-			System.out.println("		euro/unidad:");
+			System.out.println("\t\teuro/unidad:");
 			lechu.setEurosUnidad(sc.nextDouble());	
-			System.out.println("	Introduce el nombre del distribuidor:");
+			System.out.println("\t\t\tIntroduce el nombre del distribuidor:");
 			//cadena = sc.next();
 			String cadena = "FastFood";
-			System.out.println("	Introduce el codigo de barras:");
+			System.out.println("\t\tIntroduce el codigo de barras:");
 			lechu.setCod_barras(sc.nextInt());
 			
 			Distribuidor distri = new Distribuidor();
 			lechu.setDistribuidor(distri.busqueda_d(cadena));
-			System.out.println("	Has introducido el producto correctamente");
+			System.out.println("\t\tHas introducido el producto correctamente");
 			
 			return lechu;
 	}

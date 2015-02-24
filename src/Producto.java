@@ -1,7 +1,7 @@
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
-public abstract class Producto {
+public class Producto {
     //propiedades
     private String tipo, procedencia;
     private Distribuidor distribuidor;
@@ -34,5 +34,5 @@ public abstract class Producto {
 		return cod_barras;
 	}
 	
-	abstract public Producto introducir() throws IOException;
+	public void introducir() throws IOException{};
 }
