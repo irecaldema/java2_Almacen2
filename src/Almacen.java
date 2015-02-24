@@ -66,7 +66,6 @@ public class Almacen {
 								int cont_manzanas=sc.nextInt();
 								for(int i = 0;i<cont_manzanas;i++){
 									Manzana manzana = new Manzana();
-									//al_manza.add(manzana.introducir());
 									Productos.al_producto.add(manzana.introducir());
 								}
 								System.out.println();
@@ -78,7 +77,6 @@ public class Almacen {
 								int cont_lechugas=sc.nextInt();
 								for(int i = 0;i<cont_lechugas;i++){
 									Lechuga lechuga = new Lechuga();
-									//al_lechuga.add(lechuga.introducir());
 									Productos.al_producto.add(lechuga.introducir());
 								}
 								System.out.println();
@@ -90,7 +88,6 @@ public class Almacen {
 								int cont_leches=sc.nextInt();
 								for(int i = 0;i<cont_leches;i++){
 									Leche leche = new Leche();
-									//al_leche.add(leche.introducir());
 									Productos.al_producto.add(leche.introducir());
 								}
 								System.out.println();
@@ -132,7 +129,6 @@ public class Almacen {
 						
 						System.out.println("Introduce la cantidad que quiere comprar");
 						cantidad = sc.nextDouble();
-						//precio=al_cesta.get(k).getEurosKilo()*cantidad;
 						precio=Cesta.al_cesta.get(k).getPrecio()*cantidad;
 						
 						suma=suma+precio;
