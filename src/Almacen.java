@@ -7,7 +7,6 @@ public class Almacen {
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
 		int producto=0;
-
 		//***leer distibuidores***
 		try {
 			//Distribuidores.lectura("distribuidores.txt");
@@ -21,10 +20,8 @@ public class Almacen {
 		}
 		// *****lectura clientes*****
 		Clientes.lectura();
-		
 		// *****lectura productos*****
 		Productos.lectura();
-
 		do { //while (seleccion!=0){
 			System.out.println("\n	Introduce el numero correspondiente:");
 			System.out.println("\t\t1: visualizar distribuidores");
@@ -99,10 +96,8 @@ public class Almacen {
 								System.out.println("\n\tNo has seleccionado una opcion valida:");
 						}//switch
 					}while (producto!=0); //do{}while();
-			
 					//***visualizacion de los productos***
 					Productos.mostrar();
-
 					break;
 				//case 2 FIN
 				//visualizacion de los productos
@@ -138,7 +133,6 @@ public class Almacen {
 					double descuento=comprador.busqueda_c(sc.next()).getDto();
 					double total =suma-suma*descuento/100;
 					System.out.println("total a pagar: "+total);
-						
 					break;
 				//case 4 FIN
 				// cesta	
