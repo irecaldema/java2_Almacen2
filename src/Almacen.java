@@ -1,7 +1,4 @@
 import java.io.IOException;
-import java.io.FileReader;
-import java.io.BufferedReader;
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.util.InputMismatchException;
@@ -10,10 +7,6 @@ public class Almacen {
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
 		int producto=0;
-		
-		ArrayList <Leche> al_leche = new ArrayList <Leche>();
-		ArrayList <Manzana> al_manza = new ArrayList <Manzana>();
-		ArrayList <Lechuga> al_lechuga = new ArrayList <Lechuga>();
 
 		//***leer distibuidores***
 		try {
