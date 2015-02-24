@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Productos {
     // gg wp
     static ArrayList <Producto> al_producto = new ArrayList <Producto>();
+    static ArrayList <Producto> al_cesta = new ArrayList <Producto>();
     
     public static void lectura() throws IOException {
 		FileReader fr3 = new FileReader("productos.txt");

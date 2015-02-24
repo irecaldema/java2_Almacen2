@@ -112,11 +112,11 @@ public class Almacen {
 						int cod_barras=sc.nextInt();
 						
 						Producto p_comprado = new Producto();
-						Cesta.al_cesta.add(p_comprado.busqueda_p(cod_barras));
+						Productos.al_cesta.add(p_comprado.busqueda_p(cod_barras));
 						
 						System.out.println("Introduce la cantidad que quiere comprar");
 						cantidad = sc.nextDouble();
-						precio=Cesta.al_cesta.get(k).getPrecio()*cantidad;
+						precio=Productos.al_cesta.get(k).getPrecio()*cantidad;
 						
 						suma=suma+precio;
 					}//fin bucle num de compras
