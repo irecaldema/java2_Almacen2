@@ -36,12 +36,11 @@ public class Almacen {
 				seleccion = sc.nextInt();
 			}	
 			switch (seleccion){
-				case 1: // ***lectura de distribuidores***	
+				case 1: // ***mostrar distribuidores***	
 					System.out.println("\nLista de distribuidores:");
 					Distribuidores.mostrar();
 					break;
-				//FIN 1 lectura de distribuidores
-				case 2: 
+				case 2: //***introduccion de productos*** 
 					do { //while (producto!=0){
 						System.out.println("\n\tIntroduce el numero correspondiente:");
 						System.out.println("\t\t1: Manzana");
@@ -55,10 +54,8 @@ public class Almacen {
 				            producto = sc.nextInt();
 				        }
 						switch (producto) {
-							case 1: 			
-								//***introduccion de productos***		
+							case 1: //manzana	
 								System.out.println("Introduce la informacion de los productos");
-								//manzana ********************
 								System.out.println("¿Cuantos variedades de manzana?");
 								int cont_manzanas=sc.nextInt();
 								for(int i = 0;i<cont_manzanas;i++){
@@ -68,8 +65,7 @@ public class Almacen {
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
 								break;
-							case 2: 
-								//lechuga ********************
+							case 2: //lechuga
 								System.out.println("¿Cuantos variedades de leche?");
 								int cont_lechugas=sc.nextInt();
 								for(int i = 0;i<cont_lechugas;i++){
@@ -79,8 +75,7 @@ public class Almacen {
 								System.out.println();
 								System.out.println("¿Quiere introducir mas productos?");
 								break;
-							case 3: 
-								//LECHE ********************
+							case 3: //leche
 								System.out.println("¿Cuantos variedades de leche?");
 								int cont_leches=sc.nextInt();
 								for(int i = 0;i<cont_leches;i++){
@@ -100,13 +95,10 @@ public class Almacen {
 					Productos.mostrar();
 					break;
 				//case 2 FIN
-				//visualizacion de los productos
 				case 3: 			
 					Clientes.mostrar();
 					break;
-				//case 3 FIN
-				// *****cesta*****
-				case 4: 
+				case 4: // *****cesta*****
 					System.out.println("\n\tIntroduce el numero de productos a comprar:");
 					int num_compras = sc.nextInt();
 					double suma=0, precio=0, cantidad=0;
@@ -127,7 +119,7 @@ public class Almacen {
 						precio=Cesta.al_cesta.get(k).getPrecio()*cantidad;
 						
 						suma=suma+precio;
-					}//busqueda del producto en leches
+					}//fin bucle num de compras
 					System.out.println("Introduce el DNI del cliente");
 					Cliente comprador = new Cliente();
 					double descuento=comprador.busqueda_c(sc.next()).getDto();
