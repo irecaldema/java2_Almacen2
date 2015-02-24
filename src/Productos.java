@@ -69,7 +69,7 @@ public class Productos {
 	
     public static void mostrar(){
     	for(int x=0; x<Productos.al_producto.size(); x++){
-            System.out.println(al_producto.get(x).formatoproducto());    
+            System.out.println(al_producto.get(x).formatoProducto());    
         }	
 	}
 	

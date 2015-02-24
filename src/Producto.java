@@ -34,7 +34,10 @@ public class Producto {
 		return cod_barras;
 	}
 	
-	public void introducir() throws IOException{};
+	public Producto introducir() throws IOException{
+		Producto producto = new Producto();
+		return producto;
+	};
 	
 	public String formatoProducto(){
 		/*
