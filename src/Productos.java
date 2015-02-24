@@ -66,12 +66,12 @@ public class Productos {
 			} //for
 		}//while
 	}
-	/*
+	
     public static void mostrar(){
     	for(int x=0; x<Productos.al_producto.size(); x++){
             System.out.println(al_producto.get(x).formatoproducto());    
         }	
-	}*/
+	}
 	
 	public Producto busqueda_p (int cod ) throws IOException {
 		if (al_producto.size()==0) {
