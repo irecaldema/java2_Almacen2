@@ -3,6 +3,7 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.io.FileNotFoundException;
 public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
@@ -15,9 +16,14 @@ public class Almacen {
 
 		//***leer distibuidores***
 		try {
-			Distribuidores.lectura("distribuidores.txt");
-		}/*catch(){
-		}*/finally {
+			//Distribuidores.lectura("distribuidores.txt");
+			Distribuidores.lectura("m.txt");//no existe
+		} catch (FileNotFoundException errorifico) {
+			System.out.println(" Error en la lectura: "+errorifico+" (try catch)");
+			System.out.println("Escriba el nombre del archivo de distribuidores correcto");
+			Distribuidores.lectura(sc.next());
+		} finally {
+			System.out.println("Lectura realizada");
 		}
 		
 		// *****lectura clientes*****
