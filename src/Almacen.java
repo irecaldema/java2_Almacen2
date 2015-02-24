@@ -186,7 +186,7 @@ public class Almacen {
 				case 4: 
 					System.out.println("\n\tIntroduce el numero de productos a comprar:");
 					int num_compras = sc.nextInt();
-					double suma=0, precio=0;
+					double suma=0, precio=0, cantidad=0;
 					for (int k = 0; k<num_compras; k++){
 						// ***lectura de productos***
 						//Productos mostrar
@@ -261,13 +261,22 @@ public class Almacen {
 					//***comprar prductos segun el codigo de barras***	
 						System.out.println("\n\tIntroduce el codigo de barras del producto:");
 						int cod_barras=sc.nextInt();
+						
+						Producto p_comprado = new Producto();
+						Cesta.al_cesta.add(p_comprado.busqueda_p(cod_barras));
+						
+						System.out.println("Introduce la cantidad que quiere comprar");
+						cantidad = sc.nextDouble();
+						//precio=al_cesta.get(k).getEurosKilo()*cantidad;
+						precio=Cesta.al_cesta.get(k).getPrecio()*cantidad;
+						/*
 						//*** busqueda del producto en manzanas	***
 						for (int i=0; i<al_manza.size();i++){
 							if (al_manza.get(i).getCod_barras()==cod_barras){
 		    	    			System.out.println("Producto:"+al_manza.get(i).getCod_barras()+" Codigo de barras: "+ al_manza.get(i).getCod_barras() +" precio: "+al_manza.get(i).getEurosKilo() );
 								System.out.println("Introduce la cantidad que quiere comprar");
-								double cantidad = sc.nextDouble();
-								precio=al_manza.get(i).getEurosKilo();
+								cantidad = sc.nextDouble();
+								precio=al_manza.get(i).getEurosKilo()*cantidad;
 								break;
 							}
 						}//busqueda del producto en manzanas
@@ -276,7 +285,7 @@ public class Almacen {
 							if (al_lechuga.get(i).getCod_barras()==cod_barras){
 		    	    			System.out.println("Producto:"+al_lechuga.get(i).getCod_barras()+" Codigo de barras: "+ al_lechuga.get(i).getCod_barras() +" precio: "+al_lechuga.get(i).getEurosUnidad() );
 								System.out.println("Introduce la cantidad que quiere comprar");
-								double cantidad = sc.nextDouble();
+								cantidad = sc.nextDouble();
 								precio=al_lechuga.get(i).getEurosUnidad()*cantidad;
 								break;
 							}
@@ -286,11 +295,11 @@ public class Almacen {
 							if (al_leche.get(i).getCod_barras()==cod_barras){
 		    	    			System.out.println("Producto:"+al_leche.get(i).getCod_barras()+" Codigo de barras: "+ al_leche.get(i).getCod_barras() +" precio: "+al_leche.get(i).getEurosLitro() );
 								System.out.println("Introduce la cantidad que quiere comprar");
-								double cantidad = sc.nextDouble();
+								cantidad = sc.nextDouble();
 								precio=al_leche.get(i).getEurosLitro()*cantidad;
 								break;
 							}
-						}
+						}*/
 						suma=suma+precio;
 					}//busqueda del producto en leches
 					System.out.println("Introduce el DNI del cliente");

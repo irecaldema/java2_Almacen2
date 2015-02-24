@@ -19,6 +19,10 @@ public class Lechuga extends Producto {
 	public Double getEurosUnidad() {
 		return eurosUnidad;
 	}	
+	
+	@Override public double getPrecio() {
+		return getEurosUnidad();
+	}
 
 	@Override public Lechuga introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);

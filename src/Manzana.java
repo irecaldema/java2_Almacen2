@@ -19,6 +19,10 @@ public class Manzana extends Producto {
 	public Double getEurosKilo() {
 		return eurosKilo;
 	}
+	
+	@Override public double getPrecio() {
+		return getEurosKilo();
+	}
 
 	@Override public Manzana introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);

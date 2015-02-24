@@ -73,19 +73,4 @@ public class Productos {
         }	
 	}
 	
-	public Producto busqueda_p (int cod ) throws IOException {
-		if (al_producto.size()==0) {
-			Productos.lectura();
-		}	
-		Producto producto_encontrado = new Producto();
-		
-		for (int i=0; i<al_producto.size();i++){
-    		if (cod==al_producto.get(i).getCod_barras()){
-    		    producto_encontrado=al_producto.get(i);
-    			break;
-    		}
-		}
-		return producto_encontrado;
-	}
-    
 }  

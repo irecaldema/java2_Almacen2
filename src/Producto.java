@@ -6,6 +6,7 @@ public class Producto {
     protected String tipo, procedencia;
     protected Distribuidor distribuidor;
 	protected int cod_barras;
+	protected double precio;
     
     //métodos getter y setter
 	public void setTipo(String tipo) {
@@ -34,6 +35,10 @@ public class Producto {
 		return cod_barras;
 	}
 	
+	public double getPrecio(){
+		return precio;
+	}
+	
 	public Producto introducir() throws IOException{
 		Producto producto = new Producto();
 		return producto;
@@ -55,5 +60,20 @@ public class Producto {
 		"--------------------------------\n";
 		
 		return string_producto;
+	}
+	
+	public Producto busqueda_p (int cod ) throws IOException {
+		if (Productos.al_producto.size()==0) {
+			Productos.lectura();
+		}	
+		Producto producto_encontrado = new Producto();
+		
+		for (int i=0; i<Productos.al_producto.size();i++){
+    		if (cod==Productos.al_producto.get(i).getCod_barras()){
+    		    producto_encontrado=Productos.al_producto.get(i);
+    			break;
+    		}
+		}
+		return producto_encontrado;
 	}
 }

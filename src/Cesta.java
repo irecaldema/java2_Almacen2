@@ -4,6 +4,9 @@ public class Cesta {
 //propiedades
 private Cliente cliente;
 //ArrayList de cada producto
+
+static ArrayList <Producto> al_cesta = new ArrayList <Producto>();
+
 private ArrayList<Manzana> al_manzana;
 private ArrayList<Lechuga> al_lechuga;
 private ArrayList<Leche> al_leche;

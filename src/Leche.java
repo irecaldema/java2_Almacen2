@@ -12,6 +12,10 @@ public class Leche extends Producto {
 	public Double getEurosLitro() {
 		return eurosLitro;
 	}
+	
+	@Override public double getPrecio() {
+		return getEurosLitro();
+	}
 
 	@Override public Leche introducir() throws IOException {
 		Scanner sc = new Scanner(System.in);
