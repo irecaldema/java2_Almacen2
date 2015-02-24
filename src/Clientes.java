@@ -41,5 +41,22 @@ public class Clientes {
 			//añadimos el objeto distribuidor al ArrayList
 			al_cliente.add(cliente);
 		}
-	}//class
+	}
+	
+	public static void mostrar(){
+		System.out.println("\nLos clientes:");
+		//mostrar los clientes por pantalla
+		for(int x=0; x<al_cliente.size(); x++){
+			System.out.println("--------------------------------");	
+			//  String nombre, apellidos, DNI; Direccion direccion; Double num_socio, dto;
+				System.out.println("Nombre: " + al_cliente.get(x).getNombre());
+				System.out.println("Apellidos: " + al_cliente.get(x).getApellidos());
+				System.out.println("DNI: " + al_cliente.get(x).getDNI());
+				System.out.println("Direccion: ");
+				System.out.println("\t" + al_cliente.get(x).getDireccion().formatoDireccion());
+				System.out.println("Numero de socio: " + al_cliente.get(x).getNum_socio());
+				System.out.println("Descuento: " + al_cliente.get(x).getDto());				
+			System.out.println("--------------------------------");       
+		}  
+	}
 }

@@ -178,25 +178,7 @@ public class Almacen {
 				//case 2 FIN
 				//visualizacion de los productos
 				case 3: 			
-					System.out.println("\nLos clientes:");
-					//mostrar los clientes por pantalla
-					for(int x=0; x<Clientes.al_cliente.size(); x++){
-						System.out.println("--------------------------------");	
-						//  String nombre, apellidos, DNI; Direccion direccion; Double num_socio, dto;
-							System.out.println("Nombre: " + Clientes.al_cliente.get(x).getNombre());
-							System.out.println("Apellidos: " + Clientes.al_cliente.get(x).getApellidos());
-							System.out.println("DNI: " + Clientes.al_cliente.get(x).getDNI());
-							System.out.println("Direccion: ");
-								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getPais());
-								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getProvincia());
-								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getCiudad());
-								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getDireccion());
-								System.out.println("\t" + Clientes.al_cliente.get(x).getDireccion().getCpostal());
-							System.out.println("Numero de socio: " + Clientes.al_cliente.get(x).getNum_socio());
-							System.out.println("Descuento: " + Clientes.al_cliente.get(x).getDto());				
-						System.out.println("--------------------------------");       
-					}  	
-
+					Clientes.mostrar();
 					break;
 				//case 3 FIN
 				//introducir clientes
@@ -207,10 +189,8 @@ public class Almacen {
 					double suma=0, precio=0;
 					for (int k = 0; k<num_compras; k++){
 						// ***lectura de productos***
-						//al_lechuga.clear();
-						//al_manza.clear();
-						//al_leche.clear();
 						//Productos mostrar
+						System.out.println("Los productos:");
 						Productos.mostrar();
 						/*
 						FileReader fr3 = new FileReader("productos.txt");

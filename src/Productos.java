@@ -12,7 +12,6 @@ public class Productos {
 		String [] campos3 = null;
 		String [] campos4 = null;
 		String [] campos5 = null;
-		System.out.println("Los productos:");
 		String s3;
 		while((s3 = br3.readLine()) != null) {
 			campos3 = s3.split(";");
@@ -55,10 +54,11 @@ public class Productos {
 						else {
 							Leche leche = new Leche();
 							leche.setTipo(campos5[0]);
-							leche.setEurosLitro(Double.parseDouble(campos5[1]));
+							leche.setProcedencia(campos5[1]);
+							leche.setEurosLitro(Double.parseDouble(campos5[2]));
 							Distribuidor distri = new Distribuidor();
-							leche.setDistribuidor(distri.busqueda_d(campos5[2]));
-							leche.setCod_barras(Integer.parseInt(campos5[3]));
+							leche.setDistribuidor(distri.busqueda_d(campos5[3]));
+							leche.setCod_barras(Integer.parseInt(campos5[4]));
 							al_producto.add(leche);
 						}
 					}//else if
