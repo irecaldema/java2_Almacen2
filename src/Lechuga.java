@@ -45,4 +45,24 @@ public class Lechuga extends Producto {
 			
 			return lechu;
 	}
+	
+	@Override public String formatoProducto(){
+		/*
+		private String tipo, procedencia;
+	    private Distribuidor distribuidor;
+		private int cod_barras;
+		*/
+		String string_producto = 
+		"--------------------------------\n"+
+		"producto: " + this.tipo+"\n"+
+		"procedencia: " + this.procedencia+"\n"+
+		"color: " + this.color+"\n"
+		"euros/unidad: " + this.eurosUnidad+"\n"+
+		"distribuidor: \n"+
+		"\t" + this.distribuidor.formatoDistribuidor()+"\n"+
+		"codigo de barras: " + this.cod_barras+"\n"+
+		"--------------------------------\n";
+		
+		return string_producto;
+	}
 }

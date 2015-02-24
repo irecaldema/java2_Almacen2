@@ -45,7 +45,6 @@ public class Producto {
 	    private Distribuidor distribuidor;
 		private int cod_barras;
 		*/
-		
 		String string_producto = 
 		"--------------------------------\n"+
 		"producto: " + this.tipo+"\n"+
