@@ -55,7 +55,7 @@ public class Manzana extends Producto {
 		"--------------------------------\n"+
 		"producto: " + this.tipo+"\n"+
 		"procedencia: " + this.procedencia+"\n"+
-		"color: " + this.color+"\n"
+		"color: " + this.color+"\n"+
 		"euros/kilo: " + this.eurosKilo+"\n"+
 		"distribuidor: \n"+
 		"\t" + this.distribuidor.formatoDistribuidor()+"\n"+

@@ -3,9 +3,9 @@ import java.io.FileReader;
 import java.io.BufferedReader;
 public class Producto {
     //propiedades
-    private String tipo, procedencia;
-    private Distribuidor distribuidor;
-	private int cod_barras;
+    protected String tipo, procedencia;
+    protected Distribuidor distribuidor;
+	protected int cod_barras;
     
     //métodos getter y setter
 	public void setTipo(String tipo) {
