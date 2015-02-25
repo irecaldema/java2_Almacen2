@@ -36,7 +36,7 @@ public class Distribuidor {
 		return personaContacto;
 	}
 	
-	public Distribuidor busqueda_d (String cadena ) throws IOException {
+	static public Distribuidor busqueda_d (String cadena ) throws IOException {
 		if (Distribuidores.al_distri.size()==0) {
 			Distribuidores.lectura("distribuidores.txt");
 		}	

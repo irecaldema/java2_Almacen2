@@ -5,6 +5,23 @@ public class Lechuga extends Producto {
     private String color;
     private Double eurosUnidad;
 
+
+	public Lechuga(){}
+	
+	public Lechuga(Scanner sc){
+		super();
+		System.out.println("\t\tcolor:");
+		setColor(sc.next());
+		System.out.println("\t\teuro/unidad:");
+		setEurosUnidad(sc.nextDouble());			
+	}
+	
+	public Lechuga (String color, Double eurosUnidad) {
+		super();
+    	setColor(color);
+    	setEurosUnidad(eurosUnidad);
+    }
+
     //métodos getter y setter
 	public void setColor(String color) {
 		this.color = color;
@@ -22,32 +39,6 @@ public class Lechuga extends Producto {
 	
 	@Override public double getPrecio() {
 		return getEurosUnidad();
-	}
-
-	@Override public Lechuga introducir() throws IOException {
-		Scanner sc = new Scanner(System.in);
-		System.out.println("\n	lechuga:");
-			Lechuga lechu = new Lechuga();
-			System.out.println("\n	Lechuga:");						
-			System.out.println("\t\tTipo de lechuga:");
-			lechu.setTipo(sc.next());
-			System.out.println("\t\tProcedencia:");
-			lechu.setProcedencia(sc.next());
-			System.out.println("\t\tColor:");
-			lechu.setColor(sc.next());
-			System.out.println("\t\teuro/unidad:");
-			lechu.setEurosUnidad(sc.nextDouble());	
-			System.out.println("\t\t\tIntroduce el nombre del distribuidor:");
-			//cadena = sc.next();
-			String cadena = "FastFood";
-			System.out.println("\t\tIntroduce el codigo de barras:");
-			lechu.setCod_barras(sc.nextInt());
-			
-			Distribuidor distri = new Distribuidor();
-			lechu.setDistribuidor(distri.busqueda_d(cadena));
-			System.out.println("\t\tHas introducido el producto correctamente");
-			
-			return lechu;
 	}
 	
 	@Override public String formatoProducto(){
