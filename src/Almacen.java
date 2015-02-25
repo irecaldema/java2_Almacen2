@@ -50,32 +50,9 @@ public class Almacen {
 					Clientes.mostrar();
 					break;
 				case 4: // *****cesta*****
-					System.out.println("\n\tIntroduce el numero de productos a comprar:");
-					int num_compras = sc.nextInt();
-					double suma=0, precio=0, cantidad=0;
-					for (int k = 0; k<num_compras; k++){
-						//Productos mostrar
-						System.out.println("Los productos:");
-						Productos.mostrar();
+				
+					Productos.comprar(sc);
 
-					//***comprar prductos segun el codigo de barras***	
-						System.out.println("\n\tIntroduce el codigo de barras del producto:");
-						int cod_barras=sc.nextInt();
-						
-						Producto p_comprado = new Producto();
-						Productos.addCesta(p_comprado.busqueda_p(cod_barras));
-						
-						System.out.println("Introduce la cantidad que quiere comprar");
-						cantidad = sc.nextDouble();
-						precio=Productos.obtainCesta(k).getPrecio()*cantidad;
-						
-						suma=suma+precio;
-					}//fin bucle num de compras
-					System.out.println("Introduce el DNI del cliente");
-					Cliente comprador = new Cliente();
-					double descuento=comprador.busqueda_c(sc.next()).getDto();
-					double total =suma-suma*descuento/100;
-					System.out.println("total a pagar: "+total);
 					break;
 				//case 4: cesta FIN 
 				case 0: 

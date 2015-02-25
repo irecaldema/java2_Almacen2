@@ -170,4 +170,36 @@ public class Productos {
 		}while (producto!=0); //do{}while();
 	}
 	
+	public static void comprar(Scanner sc){
+		System.out.println("\n\tIntroduce el numero de productos a comprar:");
+		int num_compras = sc.nextInt();
+		double suma=0, precio=0, cantidad=0;
+		for (int k = 0; k<num_compras; k++){
+			//Productos mostrar
+			System.out.println("Los productos:");
+			Productos.mostrar();
+
+		//***comprar prductos segun el codigo de barras***	
+			System.out.println("\n\tIntroduce el codigo de barras del producto:");
+			int cod_barras=sc.nextInt();
+			
+			Producto p_comprado = new Producto();
+			try{
+				Productos.addCesta(p_comprado.busqueda_p(cod_barras));
+			}catch(IOException e){}
+			
+			System.out.println("Introduce la cantidad que quiere comprar");
+			cantidad = sc.nextDouble();
+			precio=Productos.obtainCesta(k).getPrecio()*cantidad;
+			
+			suma=suma+precio;
+		}//fin bucle num de compras
+		System.out.println("Introduce el DNI del cliente");
+		Cliente comprador = new Cliente();
+		try{
+			double descuento=comprador.busqueda_c(sc.next()).getDto();
+			double total =suma-suma*descuento/100;
+			System.out.println("total a pagar: "+total);
+		}catch(IOException e){}	
+	}	
 }  
