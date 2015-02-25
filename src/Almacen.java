@@ -6,9 +6,7 @@ public class Almacen {
 	public static void main (String args[]) throws IOException 	{
 		Scanner sc = new Scanner(System.in);		
 		int seleccion=0;
-		//int producto=0;
-		//***leer distibuidores***
-		try {
+		try {//***leer distibuidores***
 			//Distribuidores.lectura("distribuidores.txt");
 			Distribuidores.lectura(args[0]);//no existe
 		} catch (FileNotFoundException errorifico) {
@@ -52,7 +50,6 @@ public class Almacen {
 				case 4: // *****cesta*****
 					Productos.comprar(sc);
 					break;
-				//case 4: cesta FIN 
 				case 0: 
 					break;
 				default: 
