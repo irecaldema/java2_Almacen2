@@ -50,9 +50,7 @@ public class Almacen {
 					Clientes.mostrar();
 					break;
 				case 4: // *****cesta*****
-				
 					Productos.comprar(sc);
-
 					break;
 				//case 4: cesta FIN 
 				case 0: 
